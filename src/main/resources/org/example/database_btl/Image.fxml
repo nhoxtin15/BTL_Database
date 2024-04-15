@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Image_controller">
+   <children>
+      <ImageView fx:id="image" fitHeight="238.0" fitWidth="362.0" layoutX="119.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</Pane>
