@@ -15,6 +15,8 @@ import java.sql.*;
 import java.io.IOException;
 import java.net.URL;
 
+
+
 public class HelloApplication extends Application {
     private static byte[] readImage(String imagePath) {
         try {
@@ -37,6 +39,11 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Login!");
         stage.setScene(scene);
+        System.out.println(getClass().getResource("Image/login_logo.png").toString());
+        stage.getIcons().add(new Image(getClass().getResource("Image/login_logo.png").toString()));
+
+
+
         stage.show();
 
 
