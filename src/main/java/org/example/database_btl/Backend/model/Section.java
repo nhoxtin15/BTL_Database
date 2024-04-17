@@ -7,5 +7,10 @@ public class Section {
     public String name;
     public int id;
 
+    public Section(String name, int id) {
+        this.name = name;
+        this.id = id;
+        this.products = new ArrayList<>();
+    }
 
 }

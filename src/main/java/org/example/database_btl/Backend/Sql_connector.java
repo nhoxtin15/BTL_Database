@@ -4,23 +4,36 @@ import java.sql.*;
 
 public class Sql_connector {
     private static final String url = "jdbc:mysql://localhost:3306/company";
-    private static final String user = "root";
-    private static final String password = "nhoxtin1";
+    private final String user ;
+    private final String password ;
 
     private static Connection Sql_server;
     private static Statement statement;
     private static ResultSet resultSet;
 
+    private Sql_connector() {
+        user = "root";
+        password = "nhoxtin1";
+    }
+
+    private  static  Sql_connector instance;
+    public static synchronized Sql_connector getInstance() {
+        if(instance == null) {
+            instance = new Sql_connector();
+        }
+        return instance;
+    }
 
 
     public static synchronized void connect() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Sql_server = DriverManager.getConnection(url, user, password);
+            Sql_server = DriverManager.getConnection(url, getInstance().user, getInstance().password);
             statement = Sql_server.createStatement();
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+
     }
 
 
