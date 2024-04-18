@@ -57,7 +57,7 @@
                         </PasswordField>
                      </children>
                   </VBox>
-                  <Button mnemonicParsing="false" prefHeight="${rightPane.width * 0.0625}" prefWidth="${rightPane.width * 0.5}" text="Login">
+                  <Button mnemonicParsing="false" prefHeight="${rightPane.width * 0.0625}" prefWidth="${rightPane.width * 0.5}" text="Login" onAction="#onLoginButtonClick">
                      <VBox.margin>
                         <Insets top="10" />
                      </VBox.margin>

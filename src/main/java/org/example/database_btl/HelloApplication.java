@@ -41,10 +41,14 @@ public class HelloApplication extends Application {
         stage.setScene(scene);
         System.out.println(getClass().getResource("Image/login_logo.png").toString());
         stage.getIcons().add(new Image(getClass().getResource("Image/login_logo.png").toString()));
-
-
-
         stage.show();
+
+
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainEmployee.fxml"));
+//        Scene scene = new Scene(fxmlLoader.load());
+//        stage.setTitle("Main Employee!");
+//        stage.setScene(scene);
+//        stage.show();
 
 
 

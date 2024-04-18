@@ -1,12 +1,21 @@
 package org.example.database_btl.Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import org.example.database_btl.HelloApplication;
+
+import java.io.IOException;
 
 public class LoginController{
     @FXML
@@ -24,8 +33,20 @@ public class LoginController{
     private Pane mainPane;
 
     @FXML
-    protected void onLoginButtonClick() {
-        username.setText("concac");
+    protected void onLoginButtonClick(ActionEvent event) throws Exception {
+
+
+
+        //login succesfully
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mainEmployee.fxml"));
+        try {
+            Scene scene = new Scene(loader.load());
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
