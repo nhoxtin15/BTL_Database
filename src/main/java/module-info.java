@@ -10,4 +10,6 @@ module org.example.database_btl {
     exports org.example.database_btl.Backend.model;
     opens org.example.database_btl.Controller to javafx.fxml;
     exports org.example.database_btl.Controller;
+    exports org.example.database_btl.Backend.model.Controller;
+    opens org.example.database_btl.Backend.model.Controller to javafx.fxml;
 }

@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.database_btl.FxmlModel.Table"
-            prefHeight="400.0" prefWidth="600.0">
+<Pane fx:id="pane" prefHeight="120.0" prefWidth="120.0" style="-fx-background-color: #ffffff; -fx-opacity: 1;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.Controller.TableController">
+   <children>
+      <Rectangle fx:id="rectangle" fill="WHITE" height="79.0" layoutX="36.0" layoutY="21.0" opacity="0.5" stroke="WHITE" strokeType="INSIDE" width="48.0" />
+      <ImageView fx:id="tableImage" fitHeight="100.0" fitWidth="100.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
 
-</AnchorPane>
+      </ImageView>
+      <HBox alignment="CENTER" prefHeight="120.0" prefWidth="120.0">
+         <children>
+            <Text fx:id="tableNumber" boundsType="VISUAL" strokeType="OUTSIDE" strokeWidth="0.0" text="12" textOrigin="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+   </children>
+</Pane>
