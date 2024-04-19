@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import org.example.database_btl.Backend.Sql_connector;
 import  org.example.database_btl.Controller.LoginController;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -42,6 +43,17 @@ public class HelloApplication extends Application {
         System.out.println(getClass().getResource("Image/login_logo.png").toString());
         stage.getIcons().add(new Image(getClass().getResource("Image/login_logo.png").toString()));
         stage.show();
+
+        try{
+            Sql_connector sql_connector = Sql_connector.getInstance();
+            sql_connector.connect();
+            ResultSet resultSet = sql_connector.executeQuery("SELECT * FROM area");
+            while (resultSet.next()) {
+                System.out.println(resultSet.getString("Area_ID"));
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();}
 
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainEmployee.fxml"));

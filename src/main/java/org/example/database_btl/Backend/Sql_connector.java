@@ -3,7 +3,7 @@ package org.example.database_btl.Backend;
 import java.sql.*;
 
 public class Sql_connector {
-    private static final String url = "jdbc:mysql://localhost:3306/company";
+    private static final String url = "jdbc:mysql://127.0.0.1:3306/hotpot";
     private final String user ;
     private final String password ;
 
