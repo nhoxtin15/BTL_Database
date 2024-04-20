@@ -21,10 +21,6 @@
          <children>
             <VBox>
                <children>
-                  <TabPane fx:id="tabPane" cache="true" prefHeight="670.0" prefWidth="575.0" tabClosingPolicy="UNAVAILABLE">
-
-
-      </TabPane>
                   <Pane prefHeight="30.0" prefWidth="575.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 0 5 5;">
                      <children>
                         <CheckBox layoutX="33.0" layoutY="6.25" mnemonicParsing="false" text="Open Menu when choose table" />

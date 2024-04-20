@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<TabPane
+        xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:id="tabPane"
+        fx:controller="org.example.database_btl.Backend.model.Controller.RestaurantController"
+        cache="true"
+        prefHeight="670.0"
+        prefWidth="575.0"
+        tabClosingPolicy="UNAVAILABLE" >
+
+
+
+</TabPane>
+
