@@ -52,13 +52,10 @@ public class MenuAndTables {
             menuAndTablesController.areas.getTabs().add(a.areaContainer);
         }
 
-
-
-
-
-
-
-
+        menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
+            if(menuAndTablesController.checkBoxOpenMenu.isSelected())
+                menuAndTablesController.tabPaneMenuAndAreas.getSelectionModel().select(1);
+        });
 
     }
 
