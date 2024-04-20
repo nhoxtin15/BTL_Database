@@ -1,8 +1,8 @@
-package org.example.database_btl.Backend.model;
+package org.example.database_btl.Backend.model.receipt;
 
 import java.util.ArrayList;
 
-public class receipt {
+public class Receipt {
     public ArrayList<Section> sections;
     public int totalprice;
     public int CurrentPrice;

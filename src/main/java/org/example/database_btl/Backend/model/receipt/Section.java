@@ -1,4 +1,6 @@
-package org.example.database_btl.Backend.model;
+package org.example.database_btl.Backend.model.receipt;
+
+import org.example.database_btl.Backend.model.menuArea.Menu.Product;
 
 import java.util.ArrayList;
 

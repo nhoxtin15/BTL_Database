@@ -1,4 +1,4 @@
-package org.example.database_btl.Backend.model;
+package org.example.database_btl.Backend.model.menuArea.Menu;
 
 import javafx.scene.image.Image;
 

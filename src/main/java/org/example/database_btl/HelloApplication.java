@@ -19,20 +19,20 @@ import java.net.URL;
 
 
 public class HelloApplication extends Application {
-    private static byte[] readImage(String imagePath) {
-        try {
-            // Read the image file into a byte array
-            File file = new File(imagePath);
-            byte[] imageData = new byte[(int) file.length()];
-            FileInputStream fis = new FileInputStream(file);
-            fis.read(imageData);
-            fis.close();
-            return imageData;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+//    private static byte[] readImage(String imagePath) {
+//        try {
+//            // Read the image file into a byte array
+//            File file = new File(imagePath);
+//            byte[] imageData = new byte[(int) file.length()];
+//            FileInputStream fis = new FileInputStream(file);
+//            fis.read(imageData);
+//            fis.close();
+//            return imageData;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -56,11 +56,7 @@ public class HelloApplication extends Application {
             e.printStackTrace();}
 
 
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainEmployee.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load());
-//        stage.setTitle("Main Employee!");
-//        stage.setScene(scene);
-//        stage.show();
+
 
 
 

@@ -1,10 +1,11 @@
-package org.example.database_btl.Backend.model;
+package org.example.database_btl.Backend.model.menuArea.Area;
 
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import org.example.database_btl.Backend.Sql_connector;
-import org.example.database_btl.Backend.model.Controller.AreaController;
+import org.example.database_btl.Backend.model.controller.AreaController;
+
 import org.example.database_btl.HelloApplication;
 
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ public class Area {
 
     public AreaController areaController;
 
-    public Tab AreaCointainer;
+    public Tab areaContainer;
 
 
     public Area(String name){
@@ -28,11 +29,11 @@ public class Area {
 
         tables = new ArrayList<>();
 
-
+        int count = 1;
         // get table and build the structure
         try {
             while (rs.next()){
-                tables.add(new Table(rs.getString("Table_ID"),false));
+                tables.add(new Table(""+(count++),false));
             }
         }
 
@@ -44,11 +45,12 @@ public class Area {
         try {
             FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/Area.fxml"));
 
-            AreaCointainer = loader.load();
+            //get fxml
+            areaContainer = loader.load();
             areaController = loader.getController();
 
             areaController.Area.setText(name);
-            int count = 0;
+            count = 0;
             for (Table table : tables){
                 if (count % 5 == 0){
                     areaController.tables.addRow(count / 5);
@@ -59,6 +61,7 @@ public class Area {
 
         }
         catch (Exception e) {
+
             e.printStackTrace();
         }
 

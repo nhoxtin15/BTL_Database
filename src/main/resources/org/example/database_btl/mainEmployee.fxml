@@ -15,22 +15,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #399be2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Controller.MainEmployeeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #399be2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Controller.MainEmployeeController" fx:id="mainPane">
    <children>
-      <HBox layoutX="12.5" layoutY="50.0" spacing="25.0" AnchorPane.leftAnchor="12.5" AnchorPane.rightAnchor="12.5">
-         <children>
-            <VBox>
-               <children>
-                  <Pane prefHeight="30.0" prefWidth="575.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 0 5 5;">
-                     <children>
-                        <CheckBox layoutX="33.0" layoutY="6.25" mnemonicParsing="false" text="Open Menu when choose table" />
-                        <Button contentDisplay="CENTER" graphicTextGap="0.0" layoutX="462.0" layoutY="2.5" mnemonicParsing="false" pickOnBounds="false" prefHeight="20.0" prefWidth="103.0" text="Create receipt" />
-                     </children></Pane>
-               </children>
-            </VBox>
-            <TableView prefHeight="700.0" prefWidth="575.0" />
-         </children>
-      </HBox>
+
+
 
 
       <HBox alignment="CENTER" layoutY="750.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="1200.0" spacing="20.0">

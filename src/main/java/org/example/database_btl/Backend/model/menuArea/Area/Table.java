@@ -1,10 +1,9 @@
-package org.example.database_btl.Backend.model;
+package org.example.database_btl.Backend.model.menuArea.Area;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import org.example.database_btl.Backend.model.Controller.TableController;
+import org.example.database_btl.Backend.model.controller.TableController;
 import org.example.database_btl.HelloApplication;
 
 public class Table{
@@ -18,6 +17,7 @@ public class Table{
     public Table(String ID, boolean Status){
         this.ID = ID;
         this.Status = Status;
+
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/Table.fxml"));
         try {
             tableContainer = loader.load();

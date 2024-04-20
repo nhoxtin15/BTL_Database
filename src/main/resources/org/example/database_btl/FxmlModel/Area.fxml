@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Tab fx:id="Area" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.Controller.AreaController">
+<Tab fx:id="Area" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.controller.AreaController" closable="false">
     <ScrollPane>
         <content>
             <GridPane fx:id="tables" hgap="1.0" vgap="1.0">

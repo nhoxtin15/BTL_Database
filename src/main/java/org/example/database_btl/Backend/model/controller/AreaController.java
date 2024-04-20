@@ -1,12 +1,8 @@
-package org.example.database_btl.Backend.model.Controller;
+package org.example.database_btl.Backend.model.controller;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import org.example.database_btl.HelloApplication;
 
 public class AreaController {
     @FXML
@@ -18,6 +14,6 @@ public class AreaController {
 
 
     public void initialize() {
-
+        // TODO
     }
 }

@@ -1,7 +1,6 @@
-package org.example.database_btl.Backend.model.Controller;
+package org.example.database_btl.Backend.model.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;

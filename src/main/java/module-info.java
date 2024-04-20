@@ -10,6 +10,14 @@ module org.example.database_btl {
     exports org.example.database_btl.Backend.model;
     opens org.example.database_btl.Controller to javafx.fxml;
     exports org.example.database_btl.Controller;
-    exports org.example.database_btl.Backend.model.Controller;
-    opens org.example.database_btl.Backend.model.Controller to javafx.fxml;
+    exports org.example.database_btl.Backend.model.controller;
+    opens org.example.database_btl.Backend.model.controller to javafx.fxml;
+    exports org.example.database_btl.Backend.model.menuArea;
+    opens org.example.database_btl.Backend.model.menuArea to javafx.fxml;
+    exports org.example.database_btl.Backend.model.menuArea.Area;
+    opens org.example.database_btl.Backend.model.menuArea.Area to javafx.fxml;
+    exports org.example.database_btl.Backend.model.menuArea.Menu;
+    opens org.example.database_btl.Backend.model.menuArea.Menu to javafx.fxml;
+    exports org.example.database_btl.Backend.model.receipt;
+    opens org.example.database_btl.Backend.model.receipt to javafx.fxml;
 }
