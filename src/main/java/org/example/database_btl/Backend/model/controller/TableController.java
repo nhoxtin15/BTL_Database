@@ -36,11 +36,7 @@ public class TableController {
             pane.setEffect(null);
 
         });
-        pane.setOnMouseClicked(e->{
-            rectangle.setFill(Color.RED);
 
-            System.out.println("Clicked");
-        });
 
     }
 

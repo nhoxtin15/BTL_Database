@@ -9,12 +9,12 @@
 <VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:id="vBoxmenuAndTable" fx:controller="org.example.database_btl.Backend.model.controller.MenuAndTablesController">
     <children>
         <TabPane>
-            <Tab closable="false">
+            <Tab closable="false" text="Areas">
                 <TabPane fx:id="areas">
 
                 </TabPane>
             </Tab>
-            <Tab>
+            <Tab text="Menu">
                 <TabPane>
 
                 </TabPane>

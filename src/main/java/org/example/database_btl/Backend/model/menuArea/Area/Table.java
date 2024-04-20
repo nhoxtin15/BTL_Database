@@ -9,12 +9,12 @@ import org.example.database_btl.HelloApplication;
 public class Table{
 
     public String ID;
-    public boolean Status;
+    public int Status;
 
     public TableController tableController;
     public Pane tableContainer;
 
-    public Table(String ID, boolean Status){
+    public Table(String ID, int Status){
         this.ID = ID;
         this.Status = Status;
 
@@ -24,9 +24,28 @@ public class Table{
             tableController = loader.getController();
 
             tableController.tableNumber.setText(ID);
-            if(Status){
+            if(Status == 1){
                 tableController.rectangle.setFill(Color.RED);
             }
+
+            tableController.pane.setOnMouseClicked(e->{
+                if(this.Status == 0){
+                    tableController.rectangle.setFill(Color.GREEN);
+                    this.Status = -1;
+                }
+
+
+                else if(this.Status == 1){
+
+                }
+                else{
+                    tableController.rectangle.setFill(Color.BLUE);
+                    this.Status = 0;
+                }
+
+                System.out.println("Clicked");
+            });
+
         }
         catch (Exception e) {
             e.printStackTrace();

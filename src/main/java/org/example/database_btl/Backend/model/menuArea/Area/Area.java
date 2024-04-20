@@ -33,7 +33,7 @@ public class Area {
         // get table and build the structure
         try {
             while (rs.next()){
-                tables.add(new Table(""+(count++),false));
+                tables.add(new Table(""+(count++),-1));
             }
         }
 
