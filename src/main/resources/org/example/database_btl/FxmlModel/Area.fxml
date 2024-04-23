@@ -6,8 +6,8 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Tab fx:id="Area" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.controller.AreaController" closable="false">
-    <ScrollPane>
+<Tab fx:id="Area" closable="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.controller.AreaController">
+    <ScrollPane maxHeight="670.0">
         <content>
             <GridPane fx:id="tables" hgap="1.0" vgap="1.0">
                 <columnConstraints>
@@ -18,7 +18,7 @@
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="111.0" />
                 </columnConstraints>
                 <rowConstraints>
-                    <RowConstraints minHeight="10.0" prefHeight="111.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="111.0" vgrow="NEVER" />
                 </rowConstraints>
             </GridPane>
         </content>

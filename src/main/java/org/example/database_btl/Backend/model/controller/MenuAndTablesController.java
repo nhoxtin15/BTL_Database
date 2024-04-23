@@ -8,7 +8,7 @@ import javafx.scene.control.TabPane;
 
 public class MenuAndTablesController {
     @FXML
-    public TabPane areas;
+    public TabPane tabPaneAreas;
 
     @FXML
     public CheckBox checkBoxOpenMenu;
@@ -19,6 +19,9 @@ public class MenuAndTablesController {
 
     @FXML
     public TabPane tabPaneMenuAndAreas;
+
+    @FXML
+    public TabPane tabPaneMenu;
 
 
 }

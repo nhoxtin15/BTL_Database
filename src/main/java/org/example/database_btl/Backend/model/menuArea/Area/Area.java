@@ -25,21 +25,38 @@ public class Area {
         this.name = name;
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT * FROM Table_book WHERE  Area_ID = '").append(name).append("'");
-        ResultSet rs = Sql_connector.executeQuery(sql.toString());
+
 
         tables = new ArrayList<>();
 
         int count = 1;
         // get table and build the structure
-        try {
+        try(ResultSet rs = Sql_connector.executeQuery(sql.toString());) {
             while (rs.next()){
                 tables.add(new Table(""+(count++),-1));
             }
         }
-
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        StringBuilder sqlVipRoom = new StringBuilder();
+        sqlVipRoom.append("SELECT * FROM Vip_room WHERE Area_ID = '").append(name).append("'");
+
+        try( ResultSet rsVipRoom = Sql_connector.executeQuery(sqlVipRoom.toString());){
+
+            Viprooms = new ArrayList<>();
+
+            while (rsVipRoom.next()){
+                System.out.println(rsVipRoom.getString("Room_code"));
+                Viprooms.add(new Viproom(rsVipRoom.getString("Room_code")));
+            }
+
+        }
+        catch (Exception e){
+
+        }
+
 
         //display the area
         try {
@@ -56,6 +73,14 @@ public class Area {
                     areaController.tables.addRow(count / 5);
                 }
                 areaController.tables.add(table.tableContainer, count % 5, count / 5);
+                count++;
+            }
+
+            for (Viproom viproom : Viprooms){
+                if (count % 5 == 0){
+                    areaController.tables.addRow(count / 5);
+                }
+                areaController.tables.add(viproom.viproomContainer, count % 5, count / 5);
                 count++;
             }
 

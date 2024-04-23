@@ -15,5 +15,6 @@ public class AreaController {
 
     public void initialize() {
         // TODO
+
     }
 }

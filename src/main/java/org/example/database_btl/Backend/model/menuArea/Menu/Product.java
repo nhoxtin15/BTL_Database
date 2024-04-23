@@ -3,11 +3,12 @@ package org.example.database_btl.Backend.model.menuArea.Menu;
 import javafx.scene.image.Image;
 
 public class Product {
-    private String name;
-    private int price;
-    private int quantity;
+    public String name;
+    public int price;
+    public int quantity;
 
-    private Image image;
+    public Image image;
+
 
     public Product(String name, int price, int quantity, Image image) {
         this.name = name;

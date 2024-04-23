@@ -6,16 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:id="vBoxmenuAndTable" fx:controller="org.example.database_btl.Backend.model.controller.MenuAndTablesController">
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:id="vBoxmenuAndTable" fx:controller="org.example.database_btl.Backend.model.controller.MenuAndTablesController" maxHeight="700">
     <children>
-        <TabPane fx:id="tabPaneMenuAndAreas">
+        <TabPane fx:id="tabPaneMenuAndAreas" maxHeight="670">
             <Tab closable="false" text="Areas">
-                <TabPane fx:id="areas">
+                <TabPane fx:id="tabPaneAreas">
 
                 </TabPane>
             </Tab>
-            <Tab text="Menu">
-                <TabPane>
+            <Tab text="Menu" >
+                <TabPane fx:id="tabPaneMenu">
 
                 </TabPane>
             </Tab>

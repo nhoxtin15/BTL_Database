@@ -33,17 +33,12 @@ public class Table{
                     tableController.rectangle.setFill(Color.GREEN);
                     this.Status = -1;
                 }
-
-
-                else if(this.Status == 1){
-
-                }
-                else{
+                else if(this.Status == -1){
                     tableController.rectangle.setFill(Color.BLUE);
                     this.Status = 0;
                 }
 
-                System.out.println("Clicked");
+
             });
 
         }

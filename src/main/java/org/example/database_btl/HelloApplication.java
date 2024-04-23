@@ -47,7 +47,7 @@ public class HelloApplication extends Application {
         try{
             Sql_connector sql_connector = Sql_connector.getInstance();
             sql_connector.connect();
-            ResultSet resultSet = sql_connector.executeQuery("SELECT * FROM area");
+            ResultSet resultSet = sql_connector.executeQuery("SELECT * FROM Vip_room");
             while (resultSet.next()) {
                 System.out.println(resultSet.getString("Area_ID"));
             }
