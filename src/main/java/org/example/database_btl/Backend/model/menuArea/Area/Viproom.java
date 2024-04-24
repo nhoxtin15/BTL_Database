@@ -10,7 +10,7 @@ import org.example.database_btl.HelloApplication;
 public class Viproom{
 
     public String name;
-    public Pane viproomContainer;
+    public Pane vipRoomContainer;
 
     public VipRoomController vipRoomController;
 
@@ -18,11 +18,11 @@ public class Viproom{
 
 
 
-    public Viproom(String name){
+    public Viproom(String name, int Status){
         isBooked = -1;
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/VipRoom.fxml"));
         try {
-            viproomContainer = loader.load();
+            vipRoomContainer = loader.load();
             vipRoomController = loader.getController();
             vipRoomController.textVipRoom.setText(name);
             vipRoomController.paneVipRoom.setOnMouseClicked(e->{

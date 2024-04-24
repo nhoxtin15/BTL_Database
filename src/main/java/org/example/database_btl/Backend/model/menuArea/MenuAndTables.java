@@ -48,8 +48,7 @@ public class MenuAndTables {
 
 
         //get all the area
-        ResultSet rs = Sql_connector.executeQuery("SELECT * FROM Area");
-        try{
+        try(ResultSet rs = Sql_connector.executeQuery("SELECT * FROM Area");){
             ArrayList<String> areaName = new ArrayList<>();
             while (rs.next()) {
                 areaName.add(rs.getString("Area_ID"));
@@ -63,36 +62,6 @@ public class MenuAndTables {
         catch (Exception e) {
             e.printStackTrace();
         }
-
-        //add all the area to the tab pane, and collected
-        for (Area a : area) {
-            menuAndTablesController.tabPaneAreas.getTabs().add(a.areaContainer);
-
-            vipRooms.addAll(a.Viprooms);
-            System.out.println(this.vipRooms);
-        }
-        //load create the vip room
-
-        int countVipRoom = 0;
-        FXMLLoader loaderVipRoom = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/Area.fxml"));
-        try {
-             Tab AreaVipRoom = loaderVipRoom.load();
-             AreaController areaVipRoomController = loaderVipRoom.getController();
-             for (Viproom v : vipRooms) {
-                 if(countVipRoom % 5 == 0){
-                        areaVipRoomController.tables.addRow(countVipRoom / 5);
-                 }
-                areaVipRoomController.tables.add(v.viproomContainer, countVipRoom % 5, countVipRoom / 5);
-
-             }
-                menuAndTablesController.tabPaneAreas.getTabs().add(AreaVipRoom);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
-
 
 
 

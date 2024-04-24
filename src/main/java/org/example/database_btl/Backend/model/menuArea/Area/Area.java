@@ -16,86 +16,81 @@ public class Area {
     public ArrayList<Viproom> Viprooms;
     public String name;
 
-    public AreaController areaController;
+    public AreaController areaController = null;
 
-    public Tab areaContainer;
+    public Tab areaContainer = null;
 
+    public String sqlGetTable;
+    public String getSqlGetTable;
 
     public Area(String name){
         this.name = name;
-        StringBuilder sql = new StringBuilder();
-        sql.append("SELECT * FROM Table_book WHERE  Area_ID = '").append(name).append("'");
+        //sql get table
+        StringBuilder sqlTable = new StringBuilder();
+        sqlTable.append("SELECT * FROM Table_book WHERE  Area_ID = '").append(name).append("'");
+        this.sqlGetTable = sqlTable.toString();
 
-
-        tables = new ArrayList<>();
-
-        int count = 1;
-        // get table and build the structure
-        try(ResultSet rs = Sql_connector.executeQuery(sql.toString());) {
-            while (rs.next()){
-                tables.add(new Table(""+(count++),-1));
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        //sql get all the viproom of the area
         StringBuilder sqlVipRoom = new StringBuilder();
         sqlVipRoom.append("SELECT * FROM Vip_room WHERE Area_ID = '").append(name).append("'");
+        this.getSqlGetTable = sqlVipRoom.toString();
 
-        try( ResultSet rsVipRoom = Sql_connector.executeQuery(sqlVipRoom.toString());){
+        initArea();
 
-            Viprooms = new ArrayList<>();
+    }
 
-            while (rsVipRoom.next()){
-                System.out.println(rsVipRoom.getString("Room_code"));
-                Viprooms.add(new Viproom(rsVipRoom.getString("Room_code")));
-            }
-
-        }
-        catch (Exception e){
-
-        }
-
-
-        //display the area
+    public void initArea(){
+        //load the area
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/Area.fxml"));
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/Area.fxml"));
-
-            //get fxml
             areaContainer = loader.load();
             areaController = loader.getController();
-
             areaController.Area.setText(name);
-            count = 0;
-            for (Table table : tables){
-                if (count % 5 == 0){
-                    areaController.tables.addRow(count / 5);
-                }
-                areaController.tables.add(table.tableContainer, count % 5, count / 5);
-                count++;
-            }
-
-            for (Viproom viproom : Viprooms){
-                if (count % 5 == 0){
-                    areaController.tables.addRow(count / 5);
-                }
-                areaController.tables.add(viproom.viproomContainer, count % 5, count / 5);
-                count++;
-            }
-
-        }
-        catch (Exception e) {
-
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
+        //init the tables
+        tables = new ArrayList<>();
+        ResultSet rs = Sql_connector.executeQuery(sqlGetTable);
+        try{
+            while (rs.next()) {
+                tables.add(new Table(rs.getString("Table_ID"), rs.getInt("Status")));
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
 
+        //init the viproom
+        Viprooms = new ArrayList<>();
+        rs = Sql_connector.executeQuery(getSqlGetTable);
+        try{
+            while (rs.next()) {
+                Viprooms.add(new Viproom(rs.getString("Vip_ID"), rs.getInt("Status")));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
+        int count = 1;
+        //add the tables to the area
+        for (Table table : tables) {
+            if(count % 5 == 0){
+                areaController.tables.addRow(count / 5);
+            }
+            areaController.tables.add(table.tableContainer, count % 5, count / 5);
+        }
 
-
-
-
+        //add the viproom to the area
+        for (Viproom viproom : Viprooms) {
+            if(count % 5 == 0){
+                areaController.tables.addRow(count / 5);
+            }
+            areaController.tables.add(viproom.vipRoomContainer, count % 5, count / 5);
+        }
     }
+
+
 
 }

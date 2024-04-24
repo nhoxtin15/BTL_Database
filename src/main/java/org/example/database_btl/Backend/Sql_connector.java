@@ -10,7 +10,7 @@ public class Sql_connector {
 
     private static Connection Sql_server;
     private static Statement statement;
-    private static ResultSet resultSet;
+
 
     private Sql_connector() {
         user = "root";
@@ -39,12 +39,17 @@ public class Sql_connector {
 
 
     public static synchronized ResultSet executeQuery(String query) {
+
         try {
-            resultSet = statement.executeQuery(query);
+            ResultSet resultSet = statement.executeQuery(query);
+            return resultSet;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return resultSet;
+        finally{
+            return null;
+        }
+
     }
 
     public static synchronized void executeUpdate(String query) {
