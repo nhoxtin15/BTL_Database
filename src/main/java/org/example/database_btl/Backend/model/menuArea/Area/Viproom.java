@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
 import org.example.database_btl.Backend.model.controller.VipRoomController;
 import org.example.database_btl.HelloApplication;
 
-public class Viproom{
+public class VipRoom{
 
     public String name;
     public Pane vipRoomContainer;
@@ -18,9 +18,9 @@ public class Viproom{
 
 
 
-    public Viproom(String name, int Status){
+    public VipRoom(String name, int Status){
         isBooked = -1;
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/VipRoom.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("VipRoom.fxml"));
         try {
             vipRoomContainer = loader.load();
             vipRoomController = loader.getController();
@@ -41,5 +41,9 @@ public class Viproom{
         }
         this.name = name;
 
+    }
+
+    public boolean compare(VipRoom viproom) {
+        return this.name.equals(viproom.name) && this.isBooked == viproom.isBooked;
     }
 }

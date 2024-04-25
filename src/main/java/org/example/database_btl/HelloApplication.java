@@ -2,8 +2,10 @@ package org.example.database_btl;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import org.example.database_btl.Backend.Sql_connector;
@@ -40,27 +42,29 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Login!");
         stage.setScene(scene);
-        System.out.println(getClass().getResource("Image/login_logo.png").toString());
-        stage.getIcons().add(new Image(getClass().getResource("Image/login_logo.png").toString()));
-        stage.show();
 
-        try{
-            Sql_connector sql_connector = Sql_connector.getInstance();
-            sql_connector.connect();
-            ResultSet resultSet = sql_connector.executeQuery("SELECT * FROM Vip_room");
-            while (resultSet.next()) {
-                System.out.println(resultSet.getString("Area_ID"));
+
+        // Get screens
+        Screen primaryScreen = Screen.getPrimary();
+        Screen secondaryScreen = null;
+        for (Screen screen : Screen.getScreens()) {
+            if (!screen.equals(primaryScreen)) {
+                secondaryScreen = screen;
+                break;
             }
         }
-        catch (SQLException e){
-            e.printStackTrace();}
+        // Set the stage to the secondary screen if it exists
+        if (secondaryScreen != null) {
+            Rectangle2D bounds = secondaryScreen.getVisualBounds();
+            stage.setX(bounds.getMinX());
+            stage.setY(bounds.getMinY());
+        }
+
+        System.out.println(getClass().getResource("Image/login_logo.png").toString());
+        stage.getIcons().add(new Image(getClass().getResource("Image/login_logo.png").toString()));
 
 
-
-
-
-
-
+        stage.show();
     }
 
     public static void main(String[] args) {

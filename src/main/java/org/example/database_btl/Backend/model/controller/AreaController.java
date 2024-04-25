@@ -11,10 +11,4 @@ public class AreaController {
     @FXML
     public GridPane tables;
 
-
-
-    public void initialize() {
-        // TODO
-
-    }
 }

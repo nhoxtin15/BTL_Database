@@ -8,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.example.database_btl.Backend.model.controller.AreaController;
 import org.example.database_btl.Backend.model.controller.MenuAndTablesController;
+import org.example.database_btl.Backend.model.controller.VipRoomController;
 import org.example.database_btl.Backend.model.menuArea.Area.Area;
 import org.example.database_btl.Backend.model.menuArea.Area.Viproom;
 import org.example.database_btl.Backend.model.menuArea.Menu.Menu;
@@ -32,7 +33,8 @@ public class MenuAndTables {
     public MenuAndTables() {
         //load the menu and tables
             // the pane that contains the menu and the tables
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("FxmlModel/MenuAndTables.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MenuAndTables.fxml"));
         try {
             menuAndTables = loader.load();
             menuAndTablesController = loader.getController();
@@ -62,6 +64,36 @@ public class MenuAndTables {
         catch (Exception e) {
             e.printStackTrace();
         }
+
+        for (Area a : area) {
+            ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(a.areaContainer);
+            this.vipRooms.addAll(a.VipRooms);
+        }
+
+
+        FXMLLoader VipRoomFxmlLoader = new FXMLLoader(getClass().getResource("Area/Area.fxml"));
+        try{
+            Tab VipRoomContainer = VipRoomFxmlLoader.load();
+            AreaController controller = VipRoomFxmlLoader.getController();
+            controller.Area.setText("Vip rooms");
+            int countViproom =1;
+            for(Viproom v : this.vipRooms){
+                if(countViproom % 5 == 0){
+                    controller.tables.addRow(countViproom / 5);
+                }
+                controller.tables.add(v.vipRoomContainer,countViproom % 5, countViproom / 5);
+                countViproom++;
+            }
+            ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(VipRoomContainer);
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
+
 
 
 
