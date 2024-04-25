@@ -22,6 +22,8 @@ public class Table{
     public String ID;
     public int Status;
 
+    public boolean isBuilt = false;
+
     public TableController tableController;
     public Pane tableContainer;
 
@@ -55,6 +57,7 @@ public class Table{
                     this.Status = 0;
                 }
             });
+            isBuilt = true;
         }
         catch (Exception e) {
             e.printStackTrace();

@@ -1,38 +1,60 @@
 package org.example.database_btl.Backend.model.menuArea.Area;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import org.example.database_btl.Backend.model.controller.VipRoomController;
-import org.example.database_btl.HelloApplication;
 
-public class VipRoom{
+public class VipRoom {
 
-    public String name;
+    public String getName() {
+        return name;
+    }
+
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+        this.vipRoomController.textVipRoom.setText(name);
+    }
+
     public Pane vipRoomContainer;
 
     public VipRoomController vipRoomController;
 
-    public int isBooked;
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+        if(status == Table.EnumStatus.FREE.getValue()){
+            vipRoomController.rectangleVipRoom.setFill(Color.GREEN);
+        }
+        else if(status == Table.EnumStatus.OCCUPIED.getValue()){
+            vipRoomController.rectangleVipRoom.setFill(Color.RED);
+        }
+    }
+
+    private int status;
 
 
 
     public VipRoom(String name, int Status){
-        isBooked = -1;
+        this.status = Status;
         FXMLLoader loader = new FXMLLoader(getClass().getResource("VipRoom.fxml"));
         try {
             vipRoomContainer = loader.load();
             vipRoomController = loader.getController();
             vipRoomController.textVipRoom.setText(name);
             vipRoomController.paneVipRoom.setOnMouseClicked(e->{
-                if(this.isBooked == 0){
+                if(this.status == 0){
                     vipRoomController.rectangleVipRoom.setFill(Color.GREEN);
-                    this.isBooked = -1;
+                    this.status = -1;
                 }
-                else if(this.isBooked == -1){
+                else if(this.status == -1){
                     vipRoomController.rectangleVipRoom.setFill(Color.BLUE);
-                    this.isBooked = 0;
+                    this.status = 0;
                 }
             });
 
@@ -43,7 +65,9 @@ public class VipRoom{
 
     }
 
+
+
     public boolean compare(VipRoom viproom) {
-        return this.name.equals(viproom.name) && this.isBooked == viproom.isBooked;
+        return this.name.equals(viproom.name) && this.status == viproom.status;
     }
 }

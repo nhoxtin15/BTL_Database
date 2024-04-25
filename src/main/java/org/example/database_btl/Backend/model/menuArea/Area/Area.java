@@ -1,15 +1,10 @@
 package org.example.database_btl.Backend.model.menuArea.Area;
 
 
-import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
-import javafx.scene.paint.Color;
 import org.example.database_btl.Backend.Sql_connector;
-import org.example.database_btl.Backend.model.Restaurant;
 import org.example.database_btl.Backend.model.controller.AreaController;
-
-import org.example.database_btl.HelloApplication;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -24,7 +19,7 @@ public class Area {
 
 
     public ArrayList<Table> tables;
-    public ArrayList<Viproom> VipRooms;
+    public ArrayList<VipRoom> vipRooms;
     public String name;
 
 
@@ -85,45 +80,45 @@ public class Area {
         }
 
         //init the vip room
-        VipRooms = new ArrayList<>();
+        vipRooms = new ArrayList<>();
         synchronized (Sql_connector.lock) {
             try (ResultSet rs = Sql_connector.executeQuery(getSqlGetTable);) {
                 while (rs.next()) {
-                    VipRooms.add(new Viproom(rs.getString("Room_code"), -1));
+                    vipRooms.add(new VipRoom(rs.getString("Room_code"), -1));
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
         tables= new ArrayList<>();
-        VipRooms = new ArrayList<>();
+        vipRooms = new ArrayList<>();
 
 
 
         areaContainer.setOnSelectionChanged(event -> {
             if(areaContainer.isSelected()){
-                this.updateArea(event);
+                this.updateArea();
             }
         });
     }
 
-    public void updateArea(Event event){
+    public void updateArea(){
         ArrayList<Table> tempTableList = new ArrayList<>();
-        ArrayList<Viproom> tempVipRoomList = new ArrayList<>();
+        ArrayList<VipRoom> tempVipRoomList = new ArrayList<>();
         synchronized (Sql_connector.lock) {
             try (ResultSet rs = Sql_connector.executeQuery(sqlGetTable);) {
                 while (rs.next()) {
                     tempTableList.add(new Table(rs.getString("Order_num"), rs.getBoolean("available") ? 1 : -1));
-                    tempTableList.getLast().BuildTable();
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
+
         synchronized(Sql_connector.lock) {
             try (ResultSet rs = Sql_connector.executeQuery(getSqlGetTable);) {
                 while (rs.next()) {
-                    tempVipRoomList.add(new Viproom(rs.getString("Room_code"), rs.getBoolean("available") ? 1 : -1));
+                    tempVipRoomList.add(new VipRoom(rs.getString("Room_code"), rs.getBoolean("available") ? 1 : -1));
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -134,6 +129,9 @@ public class Area {
 
         for(tempTableIterator = 0 ; tempTableIterator < this.tables.size(); tempTableIterator++){
             //compare
+            if(tempTableIterator >= tempTableList.size()){
+                break;
+            }
             if(this.tables.get(tempTableIterator).compare(tempTableList.get(tempTableIterator))){
                 continue;
             }
@@ -152,29 +150,30 @@ public class Area {
         }
         for(;tempTableIterator < tempTableList.size(); tempTableIterator++){
             this.tables.add(tempTableList.get(tempTableIterator));
+            tables.getLast().BuildTable();
         }
 
 
 
-        for(tempTableIterator = 0 ; tempTableIterator < this.VipRooms.size(); tempTableIterator++){
+        for(tempTableIterator = 0 ; tempTableIterator < this.vipRooms.size(); tempTableIterator++){
             //compare
-            if(this.VipRooms.get(tempTableIterator).compare(tempVipRoomList.get(tempTableIterator))){
+            if(this.vipRooms.get(tempTableIterator).compare(tempVipRoomList.get(tempTableIterator))){
                 continue;
             }
             else{
-                Viproom vipRoomOld = this.VipRooms.get(tempTableIterator);
-                Viproom vipRoomNew = tempVipRoomList.get(tempTableIterator);
+                VipRoom vipRoomOld = this.vipRooms.get(tempTableIterator);
+                VipRoom vipRoomNew = tempVipRoomList.get(tempTableIterator);
 
-                if(!vipRoomOld.name.equals(vipRoomNew.name)){
-                    vipRoomOld.name = vipRoomNew.name;
+                if(!vipRoomOld.getName().equals(vipRoomNew.getName())){
+                    vipRoomOld.setName(vipRoomNew.getName());
                 }
-                if (vipRoomOld.isBooked != vipRoomNew.isBooked){
-                    vipRoomOld.isBooked = vipRoomNew.isBooked;
+                if (vipRoomOld.getStatus() != vipRoomNew.getStatus()){
+                    vipRoomOld.setStatus(vipRoomNew.getStatus());
                 }
             }
         }
         for(;tempTableIterator < tempVipRoomList.size(); tempTableIterator++){
-            this.VipRooms.add(tempVipRoomList.get(tempTableIterator));
+            this.vipRooms.add(tempVipRoomList.get(tempTableIterator));
         }
         showTables();
     }
@@ -194,7 +193,7 @@ public class Area {
                 areaController1.tables.add(t.tableContainer, count % 5, count / 5);
                 count++;
             }
-            for(Viproom v : VipRooms){
+            for(VipRoom v : vipRooms){
                 if(count % 5 == 0){
                     areaController1.tables.addRow(count / 5);
                 }
