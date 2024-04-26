@@ -1,3 +1,4 @@
+drop database hotpot;
 Create database hotpot;
 
 use hotpot;
@@ -97,7 +98,7 @@ create table review(
 
 create table product(
 	product_id varchar(6),
-    product_name varchar(20),
+    product_name varchar(50),
     image BLOB default null,
     price integer,
     primary key (product_id)

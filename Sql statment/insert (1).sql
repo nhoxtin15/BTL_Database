@@ -143,65 +143,67 @@ INSERT INTO Manage (SSN_waiter, SSN_manager)
 VALUES ('071234567', '070678901'); 
 
 -- Insert 30 customers into the Customer table
-INSERT INTO Customer
+
+
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00001', '111111111', 'M', 'Phuc', 'Tran Pham Gia', '2002-05-15');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00002', '222222222', 'F', 'Khue', 'Nong Thuc', '1985-08-20');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00003', '333333333', 'M', 'Duy', 'Pham Dinh Bao', '1992-02-10');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00004', '444444444', 'F', 'Phuong', 'Cao Que', '1988-11-25');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00005', '555555555', 'F', 'Linh', 'Tran Gia', '1994-07-30');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00006', '666666666', 'M', 'Kiet', 'Truong Tuan', '1987-04-12');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00007', '777777777', 'M', 'Kien', 'Le Trung', '1991-09-05');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00008', '888888888', 'M', 'Anh', 'Chu Thai', '1986-12-18');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00009', '999999999', 'M', 'Khang', 'Nguyen Tien', '1993-03-22');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00010', '000000000', 'F', 'Chau', 'Vo Thi Ngoc', '1989-06-28');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00011', '111111112', 'F', 'Thu', 'Le Thi Bao', '1995-01-07');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00012', '222222223', 'M', 'Khang', 'Mac Ho Do', '1984-10-14');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00013', '333333334', 'M', 'Quan', 'Phan Hong', '1990-05-15');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00014', '444444445', 'F', 'Nguyen', 'Nguyen Thi Quoc', '1985-08-20');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00015', '555555556', 'M', 'Khuong', 'Nguyen An', '1992-02-10');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00016', '666666667', 'M', 'Thinh', 'Nguyen Tien', '1988-11-25');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00017', '777777778', 'M', 'Du', 'Nguyen Hao Hong', '1994-07-30');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00018', '888888889', 'F', 'Van', 'Le Thanh', '1987-04-12');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00019', '999999990', 'M', 'Thinh', 'Tran Ngoc', '1991-09-05');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00020', '000000001', 'M', 'Tri', 'Nguyen Huu', '1986-12-18');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00021', '111111113', 'F', 'Minh', 'Tu Khanh', '1993-03-22');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00022', '222222224', 'F', 'Huong', 'Nguyen Thi Minh', '1989-06-28');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00023', '333333335', 'M', 'Khang', 'Mac Ho Do', '1995-01-07');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00024', '444444446', 'M', 'Kiet', 'Tran Tuan', '1984-10-14');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00025', '555555557', 'M', 'Phuc', 'Dao Anh', '1990-05-15');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00026', '666666668', 'F', 'Ariana', 'Grande', '1985-08-20');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00027', '777777779', 'M', 'Loc', 'Nguyen Thien', '1992-02-10');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00028', '888888880', 'F', 'Nhi', 'Nguyen Duc Hanh', '1988-11-25');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00029', '999999991', 'M', 'Hung', 'Huynh Gia', '1994-07-30');
-INSERT INTO Customer 
+INSERT INTO Customer (Cus_ID,SSN,Sex,FName,LName,DOB)
 VALUES ('00030', '000000002', 'M', 'Gordon', 'Ramsay', '1987-04-12');
 
 
@@ -447,68 +449,69 @@ INSERT INTO Table_book (Order_num, Area_ID, No_seat) VALUES
 (0020, 'POOL02', 5);
 
 
-INSERT INTO Table_book (Order_num, Area_ID, No_seat) VALUES
-(0021, 'GARD01', 10);
 
 
 -- Sample data for receipt table
-INSERT INTO receipt (Receipt_ID, Date_receipt, Number_of_customer, receipt_status, Ssn, Cus_ID)
+INSERT INTO receipt (Receipt_ID, Date_receipt, Number_of_customer, receipt_status,, Ssn, Cus_ID)
 VALUES
-('R00000001', '2024-04-01 10:00:00', 2, 'E', '079345', '000000001'),
-('R00000002', '2024-04-01 11:30:00', 1, 'E', 100, '079456789', '000000002'),
-('R00000003', '2024-03-01 12:45:00', 3, 'E', 250, '079567890', '000000003'),
-('R00000004', '2024-02-01 14:00:00', 2, 'E', 200, '070678901', '000000004'),
-('R00000005', '2024-01-01 15:30:00', 1, 'E', 90, '081234567', '000000005'),
-('R00000006', '2024-04-01 17:00:00', 2, 'E', 170, '056789012', '000000006'),
-('R00000007', '2024-02-01 18:30:00', 1, 'E', 75, '067890123', '000000007'),
-('R00000008', '2024-03-01 20:00:00', 3, 'E', 220, '078901234', '000000008'),
-('R00000009', '2024-04-01 21:30:00', 1, 'E', 60, '089012345', '000000009'),
-('R00000010', '2024-04-02 10:00:00', 2, 'E', 180, '090123456', '000000010'),
-('R00000011', '2024-03-02 11:30:00', 1, 'E', 120, '012345688', '000000011'),
-('R00000012', '2024-02-02 12:45:00', 2, 'E', 160, '023456789', '000000012'),
-('R00000013', '2024-01-02 14:00:00', 1, 'E', 130, '074567890', '000000013'),
-('R00000014', '2024-04-02 15:30:00', 2, 'E', 190, '075678901', '000000014'),
-('R00000015', '2024-02-02 17:00:00', 1, 'E', 95, '076789012', '000000015'),
-('R00000016', '2024-01-02 18:30:00', 3, 'E', 230, '077890123', '000000016'),
-('R00000017', '2024-01-02 20:00:00', 1, 'E', 85, '078901734', '000000017'),
-('R00000018', '2024-02-02 21:30:00', 2, 'E', 170, '019012345', '000000018');
+('R00000001', '2024-04-01 10:00:00', 2, 'E','079345111', '000000001'),
+('R00000002', '2024-04-01 11:30:00', 1, 'E','079456789', '000000002'),
+('R00000003', '2024-03-01 12:45:00', 3, 'E','079567890', '000000003'),
+('R00000004', '2024-02-01 14:00:00', 2, 'E','070678901', '000000004'),
+('R00000005', '2024-01-01 15:30:00', 1, 'E','081234567', '000000005'),
+('R00000006', '2024-04-01 17:00:00', 2, 'E','056789012', '000000006'),
+('R00000007', '2024-02-01 18:30:00', 1, 'E','067890123', '000000007'),
+('R00000008', '2024-03-01 20:00:00', 3, 'E','078901234', '000000008'),
+('R00000009', '2024-04-01 21:30:00', 1, 'E','089012345', '000000009'),
+('R00000010', '2024-04-02 10:00:00', 2, 'E','090123456', '000000010'),
+('R00000011', '2024-03-02 11:30:00', 1, 'E','012345688', '000000011'),
+('R00000012', '2024-02-02 12:45:00', 2, 'E','023456789', '000000012'),
+('R00000013', '2024-01-02 14:00:00', 1, 'E','074567890', '000000013'),
+('R00000014', '2024-04-02 15:30:00', 2, 'E','075678901', '000000014'),
+('R00000015', '2024-02-02 17:00:00', 1, 'E','076789012', '000000015'),
+('R00000016', '2024-01-02 18:30:00', 3, 'E','077890123', '000000016'),
+('R00000017', '2024-01-02 20:00:00', 1, 'E','078901734', '000000017'),
+('R00000018', '2024-02-02 21:30:00', 2, 'E','019012345', '000000018');
 
+
+select * from product;
 
 
 INSERT INTO product (product_id, product_name, image, price)
 VALUES
-    ('SB0001', 'Mala Spicy', <image_data>, 70000),
-    ('SB0002', 'Tomato Hot Pot', <image_data>, 50000),
-    ('SB0003', 'Thai Soup Base', <image_data>, 50000),
-    ('SB0004', 'Pig Bone Pot', <image_data>, 60000),
-    ('SB0005', 'Mushroom', <image_data>, 60000),
-    ('SB0006', 'Herbalist', <image_data>, 40000),
-    ('SB0007', 'Water Soup Base', <image_data>, 0),
-    ('FD0001', 'Short Rib Boneless', <image_data>, 400000),
-    ('FD0002', 'Beef Belly', <image_data>, 200000),
-    ('FD0003', 'HCMUT-flavoured beef', <image_data>, 150000),
-    ('FD0004', 'Shrimp', <image_data>, 180000),
-    ('FD0005', 'Pork Collar Butt', <image_data>, 120000),
-    ('FD0006', 'Squid', <image_data>, 180000),
-    ('FD0007', 'Cheese Tofu', <image_data>, 100000),
-    ('FD0008', 'Crab Sticks', <image_data>, 50000),
-    ('FD0009', 'Basha Fish Maw', <image_data>, 70000),
-    ('FD0010', 'Baby Octopus', <image_data>, 120000),
-    ('FD0011', 'Scallop', <image_data>, 70000),
-    ('FD0012', 'Shrimp', <image_data>, 180000),
-    ('FD0013', 'Instant Noodles', <image_data>, 5000),
-    ('FD0014', 'Spinach', <image_data>, 40000),
-    ('FD0015', 'Golden Mushroom', <image_data>, 60000),
-    ('FD0016', 'Seasoning', <image_data>, 40000),
-    ('FD0017', 'Auto refill water (plain, cola, boba)', <image_data>, 20000),
-    ('FD0018', 'Tropical Raspberry Tea', <image_data>, 60000),
-    ('FD0019', 'Toscana Bianco Vergine White Wine', <image_data>, 720000),
-    ('CB0001', 'Combo A', <image_data>, 60),
-    ('CB0002', 'Combo B', <image_data>, 65),
-    ('CB0003', 'Combo C', <image_data>, 70),
-    ('CB0004', 'Combo Special', <image_data>, 75);
+    ('SB0001', 'Mala Spicy', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/SB0001.png'), 70000),
+    ('SB0002', 'Tomato Hot Pot', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/SB0002.png'), 50000),
+    ('SB0003', 'Thai Soup Base', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/SB0003.png'), 50000),
+    ('SB0004', 'Pig Bone Pot', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/SB0004.png'), 60000),
+    ('SB0005', 'Mushroom', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/SB0005.png'), 60000),
+    ('SB0006', 'Herbalist', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/SB0006.png'), 40000),
+    ('SB0007', 'Water Soup Base', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/SB0007'), 0),
+    ('FD0001', 'Short Rib Boneless', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0001'), 400000),
+    ('FD0002', 'Beef Belly', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0002'), 200000),
+    ('FD0003', 'HCMUT-flavoured beef', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0003'), 150000),
+    ('FD0004', 'Shrimp', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0004'), 180000),
+    ('FD0005', 'Pork Collar Butt', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0005'), 120000),
+    ('FD0006', 'Squid', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0006'), 180000),
+    ('FD0007', 'Cheese Tofu', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0007'), 100000),
+    ('FD0008', 'Crab Sticks', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0008'), 50000),
+    ('FD0009', 'Basha Fish Maw', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0009'), 70000),
+    ('FD0010', 'Baby Octopus', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0010'), 120000),
+    ('FD0011', 'Scallop', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0011'), 70000),
+    ('FD0012', 'Shrimp', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0012'), 180000),
+    ('FD0013', 'Instant Noodles', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0013'), 5000),
+    ('FD0014', 'Spinach', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0014'), 40000),
+    ('FD0015', 'Golden Mushroom', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0015'), 60000),
+    ('FD0016', 'Seasoning', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0016'), 40000),
+    ('FD0017', 'Auto refill water (plain, cola, boba)', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0017'), 20000),
+    ('FD0018', 'Tropical Raspberry Tea', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0018'), 60000),
+    ('FD0019', 'Toscana Bianco Vergine White Wine',LOAD_FILE('/Users/nhoxtin15/Downloads/Image/FD0019'), 720000),
+    ('CB0001', 'Combo A', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/CD0001'), 60),
+    ('CB0002', 'Combo B', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/CD0002'), 65),
+    ('CB0003', 'Combo C', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/CD0003'), 70),
+    ('CB0004', 'Combo Special', LOAD_FILE('/Users/nhoxtin15/Downloads/Image/CD0004'), 75);
 
-INSERT INTO food_and_drinks (product_id, Acohol_contain)
+
+INSERT INTO food_and_drinks (product_id)
 VALUES
     ('FD0001'),
     ('FD0002'),
@@ -529,6 +532,7 @@ VALUES
     ('FD0017'),
     ('FD0018'),
     ('FD0019');
+
 
 
 INSERT INTO soup_base (product_id, spicy_level)
@@ -564,7 +568,7 @@ VALUES
     ('CB0001', 4,18.00, 22.00, 30),
     ('CB0002', 6,11.00, 13.00, 35),
     ('CB0003', 8,18.00,20.30, 40),
-    ('CB0004', 10,16.00,23.00, 45);
+    ('CB0004', 10,16.00,23.00, 45)
 
 INSERT INTO include_room (receipt_id, room_code, product_id, quantity) 
 VALUES

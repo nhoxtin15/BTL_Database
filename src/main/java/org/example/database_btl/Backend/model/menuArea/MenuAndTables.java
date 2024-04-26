@@ -41,9 +41,23 @@ public class MenuAndTables {
 
 
         //Init all the variable
-        this.menu = new Menu();
-        this.area = new ArrayList<>();
 
+        this.area = new ArrayList<>();
+        initArea();
+        this.menu = new Menu();
+        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.foodAndDrink.CategoryContainer);
+
+
+
+        //button at the end of the pane
+        menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
+            if(menuAndTablesController.checkBoxOpenMenu.isSelected())
+                menuAndTablesController.tabPaneMenuAndAreas.getSelectionModel().select(1);
+        });
+
+    }
+
+    public void initArea(){
         synchronized (Sql_connector.lock) {
             //get all the area
             try(ResultSet rs = Sql_connector.executeQuery("SELECT * FROM Area");){
@@ -67,15 +81,15 @@ public class MenuAndTables {
             ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(a.areaContainer);
         }
 
+
         //init the vip room
         areaVipRoom = new AreaVipRoom();
         ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(areaVipRoom.tabAreaVipRoomContainer);
 
-        //button at the end of the pane
-        menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
-            if(menuAndTablesController.checkBoxOpenMenu.isSelected())
-                menuAndTablesController.tabPaneMenuAndAreas.getSelectionModel().select(1);
-        });
+
+    }
+
+    public void initMenus(){
 
     }
 

@@ -8,25 +8,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="111.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="pane" fx:controller="org.example.database_btl.Backend.model.controller.ProductController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="111.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="10.5" layoutY="5.5" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageProduct" fitHeight="90.0" fitWidth="90.0" layoutX="10.5" layoutY="5.5" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Image/malaSpicy.png" />
+            <Image url="@../../../../../../../../../../../../../../../../Downloads/Image/SB0001.png" />
          </image>
       </ImageView>
-      <HBox alignment="TOP_CENTER" layoutY="65.0" prefHeight="10.0" prefWidth="111.0">
+      <HBox alignment="TOP_CENTER" layoutY="77.0" prefHeight="10.0" prefWidth="111.0">
          <children>
-            <Label style="-fx-background-radius: 2 2 0 0; -fx-background-color: #ffffff; -fx-border-radius: 15 15  2 2 0 00 0;" text="30,000">
+            <Label fx:id="labelPrice" style="-fx-background-radius: 2 2 0 0; -fx-background-color: #ffffff; -fx-border-radius: 15 15  2 2 0 00 0;" text="30,000">
                <font>
                   <Font size="8.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <HBox alignment="TOP_CENTER" layoutY="75.0" prefHeight="36.0" prefWidth="111.0" style="-fx-background-radius: 15 15 0 0;">
+      <HBox alignment="TOP_CENTER" layoutY="86.0" prefHeight="25.0" prefWidth="111.0" style="-fx-background-radius: 15 15 0 0;">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text fx:id="textName" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
                   <Font size="8.0" />
                </font>

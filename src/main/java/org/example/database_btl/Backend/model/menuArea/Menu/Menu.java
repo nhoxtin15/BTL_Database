@@ -1,17 +1,28 @@
 package org.example.database_btl.Backend.model.menuArea.Menu;
 
-import javafx.scene.control.Tab;
-import org.example.database_btl.Backend.model.controller.MenuController;
+
+import org.example.database_btl.Backend.model.Restaurant;
 
 import java.util.ArrayList;
 
 public class Menu {
 
-    String NameCategory;
-    ArrayList<Product> products;
+    public FoodAndDrink foodAndDrink;
+    public Combo combo;
 
-    public Tab menuContainer;
-    public MenuController menuController;
+
+
+    public Menu(){
+        foodAndDrink = new FoodAndDrink();
+        combo = new Combo();
+
+    }
+
+
+
+
+
+
 
 
 
