@@ -9,7 +9,8 @@ import org.example.database_btl.Backend.model.controller.ReceiptProductControlle
  * Author: nhoxtin15$
  * Date: 27/04/2024$
  */
-public class ProductReceipt{
+
+public class ProductReceipt {
     public int ID;
     public int quantity;
     public String name;
@@ -32,11 +33,9 @@ public class ProductReceipt{
         try{
             productReceiptContainer = loader.load();
             productReceiptController = loader.getController();
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     public void increaseQuantity(){
@@ -48,6 +47,7 @@ public class ProductReceipt{
         this.quantity = quantity;
         productReceiptController.quantity.setText(String.valueOf(quantity));
     }
+
 
 
 

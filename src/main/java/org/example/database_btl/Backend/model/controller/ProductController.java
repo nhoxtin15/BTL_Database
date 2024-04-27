@@ -28,7 +28,6 @@ public class ProductController {
         });
         pane.setOnMouseExited(e->{
             pane.setEffect(null);
-
         });
     }
 

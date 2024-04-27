@@ -61,12 +61,17 @@ public class ReceiptProductController {
 
 
         quantity.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
+            if (!newValue.matches("\\d+")) {
+                quantity.setText(oldValue);
+            }
+            if(newValue.length() > 4){
                 quantity.setText(oldValue);
             }
             this.totalPriceProduct.setText(String.valueOf(Integer.parseInt(this.priceProduct.getText()) * Integer.parseInt(this.quantity.getText())));
         });
     }
+
+
 
 
 

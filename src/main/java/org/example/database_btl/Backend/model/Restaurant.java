@@ -57,7 +57,7 @@ public class Restaurant {
         // It also initializes the controller and the containers for the restaurant
     public Restaurant() {
         this.menuAndTables = new MenuAndTables();
-        this.receipt = new Receipt();
+
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Restaurant.fxml"));
         try {
