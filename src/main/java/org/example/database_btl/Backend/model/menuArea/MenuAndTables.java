@@ -46,7 +46,8 @@ public class MenuAndTables {
         initArea();
         this.menu = new Menu();
         ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.foodAndDrink.CategoryContainer);
-
+        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.combo.CategoryContainer);
+        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.soup_base.CategoryContainer);
 
 
         //button at the end of the pane

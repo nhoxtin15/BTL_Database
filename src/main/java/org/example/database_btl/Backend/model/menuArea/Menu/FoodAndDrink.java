@@ -11,8 +11,4 @@ public class FoodAndDrink extends Category {
         this.CategoryContainer.setText("Food and Drink");
     }
 
-
-
-
-
 }
