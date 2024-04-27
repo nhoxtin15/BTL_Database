@@ -1,5 +1,10 @@
 package org.example.database_btl.Backend.model.menuArea;
 
+/**
+ * Description: Store Menu and Area (tables and Viprooms)$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -45,10 +50,7 @@ public class MenuAndTables {
         this.area = new ArrayList<>();
         initArea();
         this.menu = new Menu();
-        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.foodAndDrink.CategoryContainer);
-        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.combo.CategoryContainer);
-        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.soup_base.CategoryContainer);
-
+        initMenus();
 
         //button at the end of the pane
         menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
@@ -91,6 +93,9 @@ public class MenuAndTables {
     }
 
     public void initMenus(){
+        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.foodAndDrink.CategoryContainer);
+        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.combo.CategoryContainer);
+        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.soup_base.CategoryContainer);
 
     }
 

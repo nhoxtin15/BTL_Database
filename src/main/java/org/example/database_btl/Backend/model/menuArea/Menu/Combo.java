@@ -1,5 +1,9 @@
 package org.example.database_btl.Backend.model.menuArea.Menu;
-
+/**
+ * Description: Combo category$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 public class Combo extends Category{
     public Combo(){
         super();

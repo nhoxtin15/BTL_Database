@@ -1,5 +1,11 @@
 package org.example.database_btl.Backend.model.menuArea.Menu;
 
+/**
+ * Description: Store product$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
+
 import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
@@ -12,6 +18,8 @@ public class Product {
 
     public Image image;
 
+    public String table;
+
     public Pane productContainer;
     public ProductController productController;
 
@@ -21,8 +29,6 @@ public class Product {
         this.name = name;
         this.price = price;
         this.image = image;
-
-
     }
 
     public void initProduct(){
@@ -52,17 +58,11 @@ public class Product {
         this.price = price;
         productController.labelPrice.setText(price+" VND");
     }
-
-
     public void update(Product p){
         this.setName(p.name);
         this.setPrice(p.price);
         this.setImage(p.image);
     }
-
-
-
-
     public boolean compare(Product p){
         return this.name.equals(p.name) && this.price == p.price && this.image.equals(p.image);
     }

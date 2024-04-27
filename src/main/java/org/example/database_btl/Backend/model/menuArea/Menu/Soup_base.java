@@ -1,5 +1,10 @@
 package org.example.database_btl.Backend.model.menuArea.Menu;
 
+/**
+ * Description: Soup base category$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 public class Soup_base extends  Category{
     public Soup_base(){
         super();

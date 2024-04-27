@@ -3,10 +3,11 @@ package org.example.database_btl.Backend.model;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import org.example.database_btl.Backend.model.controller.RestaurantController;
 import org.example.database_btl.Backend.model.menuArea.MenuAndTables;
-import org.example.database_btl.Backend.model.receipt.Receipt;
-import org.example.database_btl.HelloApplication;
+import org.example.database_btl.Backend.model.Receipt.ProductReceipt;
+import org.example.database_btl.Backend.model.Receipt.Receipt;
 
 public class Restaurant {
 
@@ -66,5 +67,19 @@ public class Restaurant {
             e.printStackTrace();
         }
         restaurantController.mainHbox.getChildren().addFirst(menuAndTables.menuAndTables);
+
+
+        FXMLLoader ReceiptLoader = new FXMLLoader(getClass().getResource("Receipt/AllReceipt.fxml"));
+        try{
+            VBox receiptArea = ReceiptLoader.load();
+            restaurantController.mainHbox.getChildren().add(receiptArea);
+            ProductReceipt productReceipt = new ProductReceipt(1, "Coca", 10000);
+            productReceipt.initReceiptProduct();
+            receiptArea.getChildren().add(productReceipt.productReceiptContainer);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-package org.example.database_btl.Backend.model.receipt;
+package org.example.database_btl.Backend.model.Receipt;
 
 import org.example.database_btl.Backend.model.menuArea.Menu.Product;
 

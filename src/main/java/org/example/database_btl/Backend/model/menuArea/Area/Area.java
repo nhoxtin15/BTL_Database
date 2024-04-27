@@ -1,6 +1,10 @@
 package org.example.database_btl.Backend.model.menuArea.Area;
 
-
+/**
+ * Description: Area $
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import org.example.database_btl.Backend.Sql_connector;
@@ -29,11 +33,7 @@ public class Area {
     //        Area's FXML         //
     //                            //
     ////////////////////////////////
-
-
-
     public AreaController areaController = null;
-
     public Tab areaContainer = null;
 
     ////////////////////////////////
@@ -46,10 +46,8 @@ public class Area {
     public String getSqlGetTable;
 
 
-
     public Area(String name){
         this.name = name;
-
         //sql get table
         StringBuilder sqlTable = new StringBuilder();
         sqlTable.append("SELECT * FROM Table_book WHERE  Area_ID = '").append(name).append("'");
@@ -59,15 +57,8 @@ public class Area {
         StringBuilder sqlVipRoom = new StringBuilder();
         sqlVipRoom.append("SELECT * FROM Vip_room WHERE Area_ID = '").append(name).append("'");
         this.getSqlGetTable = sqlVipRoom.toString();
-
         initArea();
-
     }
-
-
-
-
-
     public void initArea(){
         //load the area
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Area.fxml"));
@@ -79,22 +70,11 @@ public class Area {
             e.printStackTrace();
         }
 
-        //init the vip room
-        vipRooms = new ArrayList<>();
-        synchronized (Sql_connector.lock) {
-            try (ResultSet rs = Sql_connector.executeQuery(getSqlGetTable);) {
-                while (rs.next()) {
-                    vipRooms.add(new VipRoom(rs.getString("Room_code"), -1));
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
+
         tables= new ArrayList<>();
         vipRooms = new ArrayList<>();
 
-
-
+        //Auto update
         areaContainer.setOnSelectionChanged(event -> {
             if(areaContainer.isSelected()){
                 this.updateArea();
@@ -103,6 +83,7 @@ public class Area {
     }
 
     public void updateArea(){
+        //get tables and vip rooms
         ArrayList<Table> tempTableList = new ArrayList<>();
         ArrayList<VipRoom> tempVipRoomList = new ArrayList<>();
         synchronized (Sql_connector.lock) {
@@ -125,6 +106,8 @@ public class Area {
             }
         }
 
+        //Try to update with minimum change possible
+
         int tempTableIterator = 0;
 
         for(tempTableIterator = 0 ; tempTableIterator < this.tables.size(); tempTableIterator++){
@@ -132,20 +115,9 @@ public class Area {
             if(tempTableIterator >= tempTableList.size()){
                 break;
             }
-            if(this.tables.get(tempTableIterator).compare(tempTableList.get(tempTableIterator))){
-                continue;
-            }
-            else{
-                Table tableOld = this.tables.get(tempTableIterator);
+            if(!this.tables.get(tempTableIterator).compare(tempTableList.get(tempTableIterator))){
                 Table tableNew = tempTableList.get(tempTableIterator);
-
-                if(!tableOld.ID.equals(tableNew.ID)){
-                    tableOld.setID(tableNew.ID);
-                    tableOld.setStatus(tableNew.Status);
-                }
-                if (tableOld.Status != tableNew.Status){
-                    tableOld.setStatus(tableNew.Status);
-                }
+                this.tables.get(tempTableIterator).update(tableNew);
             }
         }
         for(;tempTableIterator < tempTableList.size(); tempTableIterator++){
@@ -161,15 +133,10 @@ public class Area {
                 continue;
             }
             else{
-                VipRoom vipRoomOld = this.vipRooms.get(tempTableIterator);
-                VipRoom vipRoomNew = tempVipRoomList.get(tempTableIterator);
 
-                if(!vipRoomOld.getName().equals(vipRoomNew.getName())){
-                    vipRoomOld.setName(vipRoomNew.getName());
-                }
-                if (vipRoomOld.getStatus() != vipRoomNew.getStatus()){
-                    vipRoomOld.setStatus(vipRoomNew.getStatus());
-                }
+                VipRoom vipRoomNew = tempVipRoomList.get(tempTableIterator);
+                this.vipRooms.get(tempTableIterator).update(vipRoomNew);
+
             }
         }
         for(;tempTableIterator < tempVipRoomList.size(); tempTableIterator++){

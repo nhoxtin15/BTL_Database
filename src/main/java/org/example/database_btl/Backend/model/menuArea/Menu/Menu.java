@@ -1,9 +1,11 @@
 package org.example.database_btl.Backend.model.menuArea.Menu;
 
+/**
+ * Description: Store all the category$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 
-import org.example.database_btl.Backend.model.Restaurant;
-
-import java.util.ArrayList;
 
 public class Menu {
 

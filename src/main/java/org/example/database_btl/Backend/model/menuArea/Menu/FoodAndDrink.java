@@ -1,7 +1,11 @@
 package org.example.database_btl.Backend.model.menuArea.Menu;
 
-import java.util.ArrayList;
 
+/**
+ * Description: Food and Drink category$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 public class FoodAndDrink extends Category {
     public FoodAndDrink(){
         super();

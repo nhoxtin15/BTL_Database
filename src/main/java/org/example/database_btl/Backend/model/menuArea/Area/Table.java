@@ -1,5 +1,9 @@
 package org.example.database_btl.Backend.model.menuArea.Area;
-
+/**
+ * Description: Storing table$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -87,5 +91,14 @@ public class Table{
         return this.ID.equals(ID) && this.Status == Status ;
     }
 
+    public void update(Table newTable){
+        if(!this.ID.equals(newTable.ID)){
+            this.setID(newTable.ID);
+            this.setStatus(newTable.Status);
+        }
+        if (this.Status != newTable.Status){
+            this.setStatus(newTable.Status);
+        }
+    }
 
 }

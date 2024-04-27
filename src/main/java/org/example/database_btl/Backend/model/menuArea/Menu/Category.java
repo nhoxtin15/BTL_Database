@@ -1,5 +1,10 @@
 package org.example.database_btl.Backend.model.menuArea.Menu;
 
+/**
+ * Description: General class for categories$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import javafx.scene.image.Image;

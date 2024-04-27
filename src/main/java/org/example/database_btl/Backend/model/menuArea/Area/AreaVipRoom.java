@@ -1,5 +1,9 @@
 package org.example.database_btl.Backend.model.menuArea.Area;
-
+/**
+ * Description: Special Area for all the vip rooms$
+ * Author: nhoxtin15$
+ * Date: 27/04/2024$
+ */
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import org.example.database_btl.Backend.Sql_connector;
@@ -57,8 +61,7 @@ public class AreaVipRoom{
         for(int i = 0; i < VipRooms.size(); i++){
             if(i < tempVipRoomsList.size()){
                 if(!VipRooms.get(i).compare(tempVipRoomsList.get(i))){
-                    VipRooms.get(i).setName(tempVipRoomsList.get(i).getName());
-                    VipRooms.get(i).setStatus(tempVipRoomsList.get(i).getStatus());
+                    VipRooms.get(i).update(tempVipRoomsList.get(i));
                 }
             }
         }

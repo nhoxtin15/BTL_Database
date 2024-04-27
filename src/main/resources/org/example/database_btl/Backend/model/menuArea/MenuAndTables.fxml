@@ -14,7 +14,7 @@
 
                 </TabPane>
             </Tab>
-            <Tab text="Menu" >
+            <Tab text="Menu" closable="false" >
                 <TabPane fx:id="tabPaneMenu">
 
                 </TabPane>
