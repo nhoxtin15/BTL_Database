@@ -24,7 +24,8 @@ public class ProductReceipt {
         this.ID = ID;
         this.name = name;
         this.price = price;
-        quantity = 0;
+        quantity = 1;
+        initReceiptProduct();
     }
 
 
@@ -33,6 +34,13 @@ public class ProductReceipt {
         try{
             productReceiptContainer = loader.load();
             productReceiptController = loader.getController();
+
+            productReceiptController.iD.setText(String.valueOf(ID));
+            productReceiptController.nameProduct.setText(name);
+            productReceiptController.priceProduct.setText(String.valueOf(price));
+            productReceiptController.quantity.setText(String.valueOf(quantity));
+            productReceiptController.totalPriceProduct.setText(String.valueOf(price*quantity));
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -48,6 +56,17 @@ public class ProductReceipt {
         productReceiptController.quantity.setText(String.valueOf(quantity));
     }
 
+    public void setID(int ID){
+        this.ID = ID;
+        this.productReceiptController.iD.setText(String.valueOf(ID));
+    }
+
+    public boolean equals(ProductReceipt productReceipt){
+        return this.name.equals(productReceipt.name);
+    }
+    public boolean equals(String name,int price){
+        return this.name.equals(name) && this.price == price;
+    }
 
 
 

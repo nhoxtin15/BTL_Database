@@ -45,10 +45,9 @@ public class Category {
 
     public void updateCategory(){
         ArrayList<Product> tempProductList = new ArrayList<>();
-        System.out.println("cac");
+
         try(ResultSet rs = Sql_connector.executeQuery(sqlQuery)){
             while(rs.next()){
-                System.out.println("cac");
                 String productName = rs.getString("product_name");
 
                 int price = rs.getInt("price");

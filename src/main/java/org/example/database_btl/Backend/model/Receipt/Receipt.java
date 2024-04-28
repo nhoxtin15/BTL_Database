@@ -2,6 +2,7 @@ package org.example.database_btl.Backend.model.Receipt;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
+import org.example.database_btl.Backend.model.Restaurant;
 import org.example.database_btl.Backend.model.controller.ReceiptController;
 
 import java.util.ArrayList;
@@ -19,11 +20,15 @@ public class Receipt {
     public Tab receiptContainer;
     public ReceiptController receiptController;
 
+    public ArrayList<String> tables;
 
 
-    public Receipt(String name){
+
+    public Receipt(String name, ArrayList<String> tables){
         this.name = name;
         productReceipts = new ArrayList<>();
+        this.tables = new ArrayList<>(tables);
+        initReceipt();
     }
 
     public void initReceipt(){
@@ -31,16 +36,60 @@ public class Receipt {
         try{
             receiptContainer = loader.load();
             receiptController = loader.getController();
+            receiptContainer.setText(name);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public void addProduct(int ID, String name, int price){
-        ProductReceipt productReceipt = new ProductReceipt(ID, name, price);
+    public void addProduct(String name, int price){
+        for (ProductReceipt productReceipt : productReceipts){
+            if(productReceipt.name.equals(name)){
+                productReceipt.increaseQuantity();
+                return;
+            }
+        }
+
+        ProductReceipt productReceipt = new ProductReceipt(this.productReceipts.size()+1,name, price);
+        productReceipt.productReceiptController.removeButton.setOnMouseClicked(event -> {
+            removeProduct(name,price);
+        });
         productReceipts.add(productReceipt);
+        productReceipt.productReceiptController.totalPriceProduct.textProperty().addListener((observable, oldValue, newValue) -> {
+            updateTotalMoney();
+        });
+        updateTotalMoney();
+
         this.receiptController.addProduct(productReceipt);
     }
+
+
+    public void removeProduct(String name, int price){
+        for (int iter = 0; iter <productReceipts.size(); iter++){
+            if(productReceipts.get(iter).equals(name,price)){
+                for(int i = iter+1; i < productReceipts.size(); i++){
+                    productReceipts.get(i).setID(i);
+                }
+                productReceipts.remove(iter);
+                this.receiptController.receiptProducts.getChildren().remove(iter);
+                break;
+            }
+        }
+    }
+
+
+    public synchronized void updateTotalMoney(){
+        long totalMoney = 0;
+        for (ProductReceipt receipt : this.productReceipts){
+            totalMoney += (long) receipt.price * receipt.quantity;
+        }
+        this.receiptController.totalMoney.setText(String.valueOf(totalMoney));
+
+    }
+
+
+
 
 
 

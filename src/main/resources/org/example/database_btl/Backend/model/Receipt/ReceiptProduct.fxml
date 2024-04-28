@@ -11,21 +11,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="111.0" prefWidth="555.0" style="-fx-border-color: #000000; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.controller.ReceiptProductController">
+<AnchorPane prefHeight="80.0" prefWidth="555.0" style="-fx-border-color: #000000; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.controller.ReceiptProductController">
    <children>
-      <HBox alignment="CENTER_LEFT" prefHeight="111.0" prefWidth="700.0" spacing="10.0">
+      <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="680.0" spacing="10.0">
          <children>
-            <Label fx:id="iD" prefHeight="26.0" prefWidth="28.0" text="1">
+            <Label fx:id="iD" prefHeight="26.0" prefWidth="2.0" text="1">
                <font>
-                  <Font size="20.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <ImageView fx:id="removeButton" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="removeButton" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Image/close.png" />
                </image>
             </ImageView>
-            <Label fx:id = "nameProduct" prefHeight="30.0" prefWidth="149.0" text="HCMUT Flavour beef">
+            <Label fx:id="nameProduct" prefHeight="30.0" prefWidth="149.0" text="HCMUT Flavour beef">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -43,7 +43,7 @@
                      </graphic>
                   </Button>
                   <TextField fx:id="quantity" prefHeight="20.0" prefWidth="45.0" text="0" />
-                  <Button fx:id = "minusButton" mnemonicParsing="false">
+                  <Button fx:id="minusButton" mnemonicParsing="false">
                      <graphic>
                         <ImageView fitHeight="16.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -54,7 +54,7 @@
                   </Button>
                </children>
             </HBox>
-            <Label fx:id="priceProduct" prefWidth="85.0" text="10000">
+            <Label fx:id="priceProduct" prefHeight="20.0" prefWidth="70.0" text="10000">
                <font>
                   <Font size="16.0" />
                </font>

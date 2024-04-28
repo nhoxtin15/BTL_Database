@@ -11,7 +11,9 @@ import javafx.scene.control.TabPane;
  */
 public class AllReceiptController {
     @FXML
-    TabPane receipts;
+    public TabPane receipts;
+
+
 
 
 

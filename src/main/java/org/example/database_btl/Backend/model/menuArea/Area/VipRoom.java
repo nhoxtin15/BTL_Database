@@ -13,8 +13,6 @@ import org.example.database_btl.Backend.model.controller.VipRoomController;
 
 public class VipRoom {
 
-
-
     private String name;
 
 

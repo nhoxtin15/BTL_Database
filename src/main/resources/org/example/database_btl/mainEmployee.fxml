@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
@@ -90,6 +91,9 @@
                </children>
             </HBox>
          </children>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
       </VBox>
    </children>
 </AnchorPane>

@@ -4,6 +4,8 @@ package org.example.database_btl.Backend.model;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+
+import org.example.database_btl.Backend.model.Receipt.AllReceipt;
 import org.example.database_btl.Backend.model.controller.RestaurantController;
 import org.example.database_btl.Backend.model.menuArea.MenuAndTables;
 import org.example.database_btl.Backend.model.Receipt.ProductReceipt;
@@ -41,7 +43,9 @@ public class Restaurant {
     ////////////////////////////////
 
         private static  Restaurant instance = null;
-        public static Restaurant getInstance(){
+        public AllReceipt allReceipt;
+
+    public static Restaurant getInstance(){
             if(instance == null){
                 instance = new Restaurant();
             }
@@ -57,7 +61,7 @@ public class Restaurant {
         // It also initializes the controller and the containers for the restaurant
     public Restaurant() {
         this.menuAndTables = new MenuAndTables();
-
+        this.allReceipt = new AllReceipt();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Restaurant.fxml"));
         try {
@@ -67,19 +71,7 @@ public class Restaurant {
             e.printStackTrace();
         }
         restaurantController.mainHbox.getChildren().addFirst(menuAndTables.menuAndTables);
-
-
-        FXMLLoader ReceiptLoader = new FXMLLoader(getClass().getResource("Receipt/AllReceipt.fxml"));
-        try{
-            VBox receiptArea = ReceiptLoader.load();
-            restaurantController.mainHbox.getChildren().add(receiptArea);
-            ProductReceipt productReceipt = new ProductReceipt(1, "Coca", 10000);
-            productReceipt.initReceiptProduct();
-            receiptArea.getChildren().add(productReceipt.productReceiptContainer);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-        }
-
+        restaurantController.mainHbox.getChildren().add(allReceipt.allReceiptContainer);
     }
+
 }

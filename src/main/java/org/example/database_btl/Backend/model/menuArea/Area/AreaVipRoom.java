@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import org.example.database_btl.Backend.Sql_connector;
 import org.example.database_btl.Backend.model.controller.AreaVipRoomController;
+import org.example.database_btl.Exception.PopUpMessage;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -86,7 +87,7 @@ public class AreaVipRoom{
             this.areaVipRoomController.AreaVipRoom.setContent(tempAreaVipRoomContainer.getContent());
         }
         catch (Exception e) {
-            e.printStackTrace();
+            new PopUpMessage(e);
         }
 
     }

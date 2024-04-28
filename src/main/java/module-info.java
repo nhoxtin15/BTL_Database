@@ -29,4 +29,8 @@ module org.example.database_btl {
 
     opens org.example.database_btl.Backend.model.Receipt to javafx.fxml;
     exports org.example.database_btl.Backend.model.Receipt;
+
+    opens org.example.database_btl.Exception.Controller to javafx.fxml;
+    exports org.example.database_btl.Exception.Controller;
+
 }

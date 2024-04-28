@@ -14,8 +14,7 @@ public class ReceiptProductController {
     @FXML
     public Label iD;
 
-    @FXML
-    public Label name;
+
 
     @FXML
     public ImageView removeButton;
@@ -68,6 +67,10 @@ public class ReceiptProductController {
                 quantity.setText(oldValue);
             }
             this.totalPriceProduct.setText(String.valueOf(Integer.parseInt(this.priceProduct.getText()) * Integer.parseInt(this.quantity.getText())));
+        });
+
+        totalPriceProduct.textProperty().addListener((observable, oldValue, newValue) -> {
+
         });
     }
 

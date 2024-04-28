@@ -9,6 +9,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.VBox;
+import org.example.database_btl.Backend.model.Receipt.AllReceipt;
+import org.example.database_btl.Backend.model.Receipt.Receipt;
+import org.example.database_btl.Backend.model.Restaurant;
 import org.example.database_btl.Backend.model.controller.AreaController;
 import org.example.database_btl.Backend.model.controller.MenuAndTablesController;
 import org.example.database_btl.Backend.model.menuArea.Area.Area;
@@ -16,6 +19,7 @@ import org.example.database_btl.Backend.model.menuArea.Area.AreaVipRoom;
 import org.example.database_btl.Backend.model.menuArea.Area.VipRoom;
 import org.example.database_btl.Backend.model.menuArea.Menu.Menu;
 import org.example.database_btl.Backend.Sql_connector;
+import org.example.database_btl.Exception.PopUpMessage;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -54,9 +58,16 @@ public class MenuAndTables {
 
         //button at the end of the pane
         menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
+            //loop through and add table
+
+
+            AllReceipt.addReceipt(((TabPane) this.menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getSelectionModel().getSelectedItem().getText());
+
             if(menuAndTablesController.checkBoxOpenMenu.isSelected())
                 menuAndTablesController.tabPaneMenuAndAreas.getSelectionModel().select(1);
+
         });
+
 
     }
 
@@ -67,6 +78,7 @@ public class MenuAndTables {
                 ArrayList<String> areaName = new ArrayList<>();
                 while (rs.next()) {
                     areaName.add(rs.getString("Area_ID"));
+                    AllReceipt.receiptMap.put(rs.getString("Area_ID"), 1);
                 }
                 //for each area
                 // init the new area
@@ -75,7 +87,7 @@ public class MenuAndTables {
                 }
             }
             catch (Exception e) {
-                e.printStackTrace();
+                new PopUpMessage(e);
             }
         }
 
@@ -98,6 +110,8 @@ public class MenuAndTables {
         ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.soup_base.CategoryContainer);
 
     }
+
+
 
 
 }

@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.example.database_btl.Exception.PopUpMessage;
 import org.example.database_btl.HelloApplication;
 
 import java.io.IOException;
@@ -44,8 +45,8 @@ public class LoginController{
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            new PopUpMessage(e);
         }
     }
 

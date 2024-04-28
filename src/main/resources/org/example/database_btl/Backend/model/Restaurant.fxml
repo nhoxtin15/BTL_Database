@@ -10,7 +10,5 @@
 
 
     </children>
-   <opaqueInsets>
-      <Insets left="50.0" right="50.0" />
-   </opaqueInsets>
+
 </HBox>
