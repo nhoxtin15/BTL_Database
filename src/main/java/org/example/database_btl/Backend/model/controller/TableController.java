@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.input.InputMethodEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -11,33 +12,35 @@ import org.example.database_btl.HelloApplication;
 import javafx.scene.layout.Pane;
 public class TableController {
 
-    public static final Image DEFAULT_IMAGE = new Image(HelloApplication.class.getResource("Image/dinning-table.png").toString());
+    public static Image DEFAULT_IMAGE = new Image(HelloApplication.class.getResource("Image/dinning-table.png").toString());
     @FXML
-    public ImageView tableImage;
+    public ImageView imageTable;
 
     @FXML
     public Rectangle rectangle;
 
     @FXML
-    public Text tableNumber;
+    public Text tableName;
 
     @FXML
-    public Pane pane;
+    public Pane paneContainer;
+
+    public Image getDefaultImage(){
+        return DEFAULT_IMAGE;
+    }
 
     public void initialize() {
-        tableImage.setImage(DEFAULT_IMAGE);
+        imageTable.setImage(getDefaultImage());
 
         rectangle.setFill(Color.GREEN);
-        pane.setOnMouseEntered(e->{
-            pane.setEffect(new DropShadow());
+        paneContainer.setOnMouseEntered(e->{
+            paneContainer.setEffect(new DropShadow());
 
         });
-        pane.setOnMouseExited(e->{
-            pane.setEffect(null);
+        paneContainer.setOnMouseExited(e->{
+            paneContainer.setEffect(null);
 
         });
-
-
     }
 
 }

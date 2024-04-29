@@ -44,14 +44,14 @@ public class Table{
             tableContainer = loader.load();
             tableController = loader.getController();
 
-            tableController.tableNumber.setText(ID);
+            tableController.tableName.setText(ID);
 
 
             if(Status == EnumStatus.OCCUPIED.value){
                 tableController.rectangle.setFill(Color.RED);
             }
 
-            tableController.pane.setOnMouseClicked(e->{
+            tableController.paneContainer.setOnMouseClicked(e->{
                 if(this.Status == EnumStatus.SELECTED.value){
                     tableController.rectangle.setFill(Color.GREEN);
                     this.Status = -1;
@@ -70,7 +70,7 @@ public class Table{
 
     public void setID(String ID){
         this.ID = ID;
-        this.tableController.tableNumber.setText(ID);
+        this.tableController.tableName.setText(ID);
     }
 
     public void setStatus(int Status){

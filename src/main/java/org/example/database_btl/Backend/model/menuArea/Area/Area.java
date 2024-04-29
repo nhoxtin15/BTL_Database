@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import org.example.database_btl.Backend.Sql_connector;
 import org.example.database_btl.Backend.model.controller.AreaController;
+import org.example.database_btl.Exception.PopUpMessage;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -25,6 +26,7 @@ public class Area {
     public ArrayList<Table> tables;
     public ArrayList<VipRoom> vipRooms;
     public String name;
+
 
 
 
@@ -82,6 +84,25 @@ public class Area {
         });
     }
 
+
+    public void updateTable(){
+        ArrayList<Table> tempTableList = new ArrayList<>();
+        synchronized (Sql_connector.lock) {
+            try (ResultSet rs = Sql_connector.executeQuery(sqlGetTable);) {
+                while (rs.next()) {
+                    tempTableList.add(new Table(rs.getString("Order_num"), rs.getBoolean("available") ? 1 : -1));
+                }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+
+    }
+
+
+
+
     public void updateArea(){
         //get tables and vip rooms
         ArrayList<Table> tempTableList = new ArrayList<>();
@@ -107,7 +128,6 @@ public class Area {
         }
 
         //Try to update with minimum change possible
-
         int tempTableIterator = 0;
 
         for(tempTableIterator = 0 ; tempTableIterator < this.tables.size(); tempTableIterator++){
@@ -145,6 +165,8 @@ public class Area {
         showTables();
     }
 
+
+
     public void showTables(){
         //load the area
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Area.fxml"));
@@ -169,7 +191,7 @@ public class Area {
             }
             this.areaContainer.setContent(areaContainer1.getContent());
         } catch (Exception e) {
-            e.printStackTrace();
+            new PopUpMessage(e);
         }
 
     }

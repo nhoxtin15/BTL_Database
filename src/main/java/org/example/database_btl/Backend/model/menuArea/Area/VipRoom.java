@@ -31,14 +31,14 @@ public class VipRoom {
         try {
             vipRoomContainer = loader.load();
             vipRoomController = loader.getController();
-            vipRoomController.textVipRoom.setText(name);
-            vipRoomController.paneVipRoom.setOnMouseClicked(e->{
+            vipRoomController.tableName.setText(name);
+            vipRoomController.paneContainer.setOnMouseClicked(e->{
                 if(this.status == 0){
-                    vipRoomController.rectangleVipRoom.setFill(Color.GREEN);
+                    vipRoomController.rectangle.setFill(Color.GREEN);
                     this.status = -1;
                 }
                 else if(this.status == -1){
-                    vipRoomController.rectangleVipRoom.setFill(Color.BLUE);
+                    vipRoomController.rectangle.setFill(Color.BLUE);
                     this.status = 0;
                 }
             });
@@ -55,7 +55,7 @@ public class VipRoom {
     }
     public void setName(String name) {
         this.name = name;
-        this.vipRoomController.textVipRoom.setText(name);
+        this.vipRoomController.tableName.setText(name);
     }
     public int getStatus() {
         return status;
@@ -64,10 +64,10 @@ public class VipRoom {
     public void setStatus(int status) {
         this.status = status;
         if(status == Table.EnumStatus.FREE.getValue()){
-            vipRoomController.rectangleVipRoom.setFill(Color.GREEN);
+            vipRoomController.rectangle.setFill(Color.GREEN);
         }
         else if(status == Table.EnumStatus.OCCUPIED.getValue()){
-            vipRoomController.rectangleVipRoom.setFill(Color.RED);
+            vipRoomController.rectangle.setFill(Color.RED);
         }
     }
 
