@@ -174,6 +174,17 @@ public class Area {
 
     }
 
+    public ArrayList<String> getBookTableList(){
+        ArrayList<String> bookTableList = new ArrayList<>();
+        for(Table t : tables){
+            if(t.Status == Table.EnumStatus.SELECTED.getValue()){
+                t.setStatus(Table.EnumStatus.OCCUPIED.getValue());
+                bookTableList.add(t.ID);
+            }
+        }
+        return bookTableList;
+    }
+
 
 
 

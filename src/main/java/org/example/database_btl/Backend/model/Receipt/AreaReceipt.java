@@ -12,6 +12,7 @@ public class AreaReceipt {
 
     public String name;
 
+
     public AreaReceipt(String name, ArrayList<String> tables){
         this.name = name;
         this.tables = new ArrayList<>(tables);
@@ -20,5 +21,7 @@ public class AreaReceipt {
     public void addTable(String table){
         tables.add(table);
     }
+
+
 
 }

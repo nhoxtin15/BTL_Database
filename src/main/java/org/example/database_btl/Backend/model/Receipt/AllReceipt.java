@@ -5,6 +5,7 @@ import javafx.scene.layout.VBox;
 import org.example.database_btl.Backend.model.Restaurant;
 import org.example.database_btl.Backend.model.controller.AllReceiptController;
 import org.example.database_btl.Backend.model.controller.RestaurantController;
+import org.example.database_btl.Exception.PopUpMessage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,6 +13,8 @@ import java.util.Map;
 
 public class AllReceipt {
     public ArrayList<Receipt> allReceipts;
+
+
 
     public static Map<String,Integer> receiptMap = new HashMap<>();
 
@@ -32,17 +35,19 @@ public class AllReceipt {
 
         }
         catch (Exception e){
-
+            new PopUpMessage(e);
         }
     }
 
 
 
-    public static void addReceipt(String Area){
+    public static void addReceipt(String Area, AreaReceipt areaReceipt){
         String name = Area + "_" + receiptMap.get(Area);
         receiptMap.put(Area,receiptMap.get(Area)+1);
 
-        Receipt newReceipt = new Receipt(name,new ArrayList<>());
+        Receipt newReceipt = new Receipt(name,areaReceipt);
+
+
         Restaurant.getInstance().allReceipt.allReceipts.add(newReceipt);
         Restaurant.getInstance().allReceipt.allReceiptController.receipts.getTabs().add(newReceipt.receiptContainer);
     }

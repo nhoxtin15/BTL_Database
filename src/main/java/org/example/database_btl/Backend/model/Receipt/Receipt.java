@@ -21,13 +21,15 @@ public class Receipt {
     public ReceiptController receiptController;
 
     public ArrayList<String> tables;
+    public ArrayList<AreaReceipt> areaReceipts;
 
 
-
-    public Receipt(String name, ArrayList<String> tables){
+    public Receipt(String name, AreaReceipt areaReceipt){
         this.name = name;
         productReceipts = new ArrayList<>();
-        this.tables = new ArrayList<>(tables);
+        this.areaReceipts = new ArrayList<>();
+        this.areaReceipts.add(areaReceipt);
+
         initReceipt();
     }
 

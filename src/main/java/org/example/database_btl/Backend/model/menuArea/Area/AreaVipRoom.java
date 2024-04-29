@@ -55,7 +55,7 @@ public class AreaVipRoom{
                     tempVipRoomsList.add(vipRoom);
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                new PopUpMessage(e);
             }
         }
 
@@ -91,6 +91,16 @@ public class AreaVipRoom{
         }
 
     }
+
+    public ArrayList<String> getVipRoomName(){
+        ArrayList<String> vipRoomName = new ArrayList<>();
+        for(VipRoom vipRoom : VipRooms){
+            if(vipRoom.getStatus() == 1)
+                vipRoomName.add(vipRoom.getName());
+        }
+        return vipRoomName;
+    }
+
 
 
 }

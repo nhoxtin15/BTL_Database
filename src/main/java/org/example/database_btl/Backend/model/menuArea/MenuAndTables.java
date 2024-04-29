@@ -10,6 +10,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.VBox;
 import org.example.database_btl.Backend.model.Receipt.AllReceipt;
+import org.example.database_btl.Backend.model.Receipt.AreaReceipt;
 import org.example.database_btl.Backend.model.Receipt.Receipt;
 import org.example.database_btl.Backend.model.Restaurant;
 import org.example.database_btl.Backend.model.controller.AreaController;
@@ -59,9 +60,24 @@ public class MenuAndTables {
         //button at the end of the pane
         menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
             //loop through and add table
+            String areaName = menuAndTablesController.tabPaneAreas.getSelectionModel().getSelectedItem().getText();
+            ArrayList<String> tableList = new ArrayList<>();
+            if(areaName.equals("Vip Rooms") ){
+                tableList = areaVipRoom.getVipRoomName();
+            }
+            else {
+                for (Area a : area) {
+                    if (a.name.equals(areaName)) {
+                        tableList = a.getBookTableList();
+                        break;
+                    }
+                }
+            }
+
+            AreaReceipt areaReceipt = new AreaReceipt(areaName, tableList);
 
 
-            AllReceipt.addReceipt(((TabPane) this.menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getSelectionModel().getSelectedItem().getText());
+            AllReceipt.addReceipt(areaName, areaReceipt);
 
             if(menuAndTablesController.checkBoxOpenMenu.isSelected())
                 menuAndTablesController.tabPaneMenuAndAreas.getSelectionModel().select(1);
@@ -108,7 +124,6 @@ public class MenuAndTables {
         ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.foodAndDrink.CategoryContainer);
         ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.combo.CategoryContainer);
         ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getLast().getContent()).getTabs().add(menu.soup_base.CategoryContainer);
-
     }
 
 
