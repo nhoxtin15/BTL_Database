@@ -8,7 +8,9 @@ package org.example.database_btl.Backend.model.menuArea.Area;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import org.example.database_btl.Backend.Sql_connector;
+import org.example.database_btl.Backend.model.Receipt.AreaReceipt;
 import org.example.database_btl.Backend.model.controller.AreaController;
+import org.example.database_btl.Exception.NoTableException;
 import org.example.database_btl.Exception.PopUpMessage;
 
 import java.sql.ResultSet;
@@ -21,13 +23,9 @@ public class Area {
     //      Area's attribute      //
     //                            //
     ////////////////////////////////
-
-
     public ArrayList<Table> tables;
     public ArrayList<VipRoom> vipRooms;
     public String name;
-
-
 
 
     ////////////////////////////////
@@ -45,7 +43,7 @@ public class Area {
     ////////////////////////////////
 
     public String sqlGetTable;
-    public String getSqlGetTable;
+    public String sqlGetVipRoom;
 
 
     public Area(String name){
@@ -58,7 +56,7 @@ public class Area {
         //sql get all the viproom of the area
         StringBuilder sqlVipRoom = new StringBuilder();
         sqlVipRoom.append("SELECT * FROM Vip_room WHERE Area_ID = '").append(name).append("'");
-        this.getSqlGetTable = sqlVipRoom.toString();
+        this.sqlGetVipRoom = sqlVipRoom.toString();
         initArea();
     }
     public void initArea(){
@@ -71,8 +69,6 @@ public class Area {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         tables= new ArrayList<>();
         vipRooms = new ArrayList<>();
 
@@ -97,71 +93,46 @@ public class Area {
             }
         }
 
+        for (int i = 0 ; i < this.tables.size() && i < tempTableList.size(); i++){
+            if(!this.tables.get(i).compare(tempTableList.get(i))){
+                Table tableNew = tempTableList.get(i);
+                this.tables.get(i).update(tableNew);
+            }
+        }
+        for(int i = this.tables.size(); i < tempTableList.size(); i++){
+            this.tables.add(tempTableList.get(i));
+            tables.get(i).BuildTable();
+        }
+    }
+
+    public void  updateVipRoom(){
+        ArrayList<VipRoom> tempVipRoomList = new ArrayList<>();
+        synchronized (Sql_connector.lock){
+            try(ResultSet rs = Sql_connector.executeQuery(sqlGetVipRoom)){
+                while (rs.next()){
+                    tempVipRoomList.add(new VipRoom(rs.getString("Room_code"), rs.getBoolean("available")?1:-1));
+                }
+            } catch (Exception e) {
+                new PopUpMessage(e);
+            }
+        }
+
+        for(int i = 0; i < vipRooms.size() && i < tempVipRoomList.size(); i++){
+            if(!vipRooms.get(i).compare(tempVipRoomList.get(i))){
+                vipRooms.get(i).update(tempVipRoomList.get(i));
+            }
+        }
+        for(int i = vipRooms.size(); i < tempVipRoomList.size(); i++){
+            vipRooms.add(tempVipRoomList.get(i));
+            vipRooms.get(i).BuildTable();
+        }
 
     }
 
-
-
-
     public void updateArea(){
-        //get tables and vip rooms
-        ArrayList<Table> tempTableList = new ArrayList<>();
-        ArrayList<VipRoom> tempVipRoomList = new ArrayList<>();
-        synchronized (Sql_connector.lock) {
-            try (ResultSet rs = Sql_connector.executeQuery(sqlGetTable);) {
-                while (rs.next()) {
-                    tempTableList.add(new Table(rs.getString("Order_num"), rs.getBoolean("available") ? 1 : -1));
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
+        updateTable();
+        updateVipRoom();
 
-        synchronized(Sql_connector.lock) {
-            try (ResultSet rs = Sql_connector.executeQuery(getSqlGetTable);) {
-                while (rs.next()) {
-                    tempVipRoomList.add(new VipRoom(rs.getString("Room_code"), rs.getBoolean("available") ? 1 : -1));
-                }
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-            }
-        }
-
-        //Try to update with minimum change possible
-        int tempTableIterator = 0;
-
-        for(tempTableIterator = 0 ; tempTableIterator < this.tables.size(); tempTableIterator++){
-            //compare
-            if(tempTableIterator >= tempTableList.size()){
-                break;
-            }
-            if(!this.tables.get(tempTableIterator).compare(tempTableList.get(tempTableIterator))){
-                Table tableNew = tempTableList.get(tempTableIterator);
-                this.tables.get(tempTableIterator).update(tableNew);
-            }
-        }
-        for(;tempTableIterator < tempTableList.size(); tempTableIterator++){
-            this.tables.add(tempTableList.get(tempTableIterator));
-            tables.getLast().BuildTable();
-        }
-
-
-
-        for(tempTableIterator = 0 ; tempTableIterator < this.vipRooms.size(); tempTableIterator++){
-            //compare
-            if(this.vipRooms.get(tempTableIterator).compare(tempVipRoomList.get(tempTableIterator))){
-                continue;
-            }
-            else{
-
-                VipRoom vipRoomNew = tempVipRoomList.get(tempTableIterator);
-                this.vipRooms.get(tempTableIterator).update(vipRoomNew);
-
-            }
-        }
-        for(;tempTableIterator < tempVipRoomList.size(); tempTableIterator++){
-            this.vipRooms.add(tempVipRoomList.get(tempTableIterator));
-        }
         showTables();
     }
 
@@ -186,9 +157,10 @@ public class Area {
                 if(count % 5 == 0){
                     areaController1.tables.addRow(count / 5);
                 }
-                areaController1.tables.add(v.vipRoomContainer, count % 5, count / 5);
+                areaController1.tables.add(v.tableContainer, count % 5, count / 5);
                 count++;
             }
+
             this.areaContainer.setContent(areaContainer1.getContent());
         } catch (Exception e) {
             new PopUpMessage(e);
@@ -196,15 +168,24 @@ public class Area {
 
     }
 
-    public ArrayList<String> getBookTableList(){
-        ArrayList<String> bookTableList = new ArrayList<>();
+
+    public AreaReceipt getAreaReceipt() throws Exception{
+        ArrayList<String> tableList = new ArrayList<>();
         for(Table t : tables){
-            if(t.Status == Table.EnumStatus.SELECTED.getValue()){
-                t.setStatus(Table.EnumStatus.OCCUPIED.getValue());
-                bookTableList.add(t.ID);
+            if(t.getStatus() == Table.EnumStatus.OCCUPIED.getValue()){
+              tableList.add(t.getID());
             }
         }
-        return bookTableList;
+        for(VipRoom v : vipRooms){
+            if(v.getStatus() == VipRoom.EnumStatus.OCCUPIED.getValue()){
+                tableList.add(v.getID());
+            }
+        }
+
+        if(tableList.isEmpty()){
+            throw new NoTableException();
+        }
+        return new AreaReceipt(name,tableList);
     }
 
 

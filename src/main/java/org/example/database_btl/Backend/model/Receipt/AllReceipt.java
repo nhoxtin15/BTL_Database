@@ -13,12 +13,7 @@ import java.util.Map;
 
 public class AllReceipt {
     public ArrayList<Receipt> allReceipts;
-
-
-
     public static Map<String,Integer> receiptMap = new HashMap<>();
-
-
     public VBox allReceiptContainer;
     public AllReceiptController allReceiptController;
 
@@ -44,10 +39,7 @@ public class AllReceipt {
     public static void addReceipt(String Area, AreaReceipt areaReceipt){
         String name = Area + "_" + receiptMap.get(Area);
         receiptMap.put(Area,receiptMap.get(Area)+1);
-
         Receipt newReceipt = new Receipt(name,areaReceipt);
-
-
         Restaurant.getInstance().allReceipt.allReceipts.add(newReceipt);
         Restaurant.getInstance().allReceipt.allReceiptController.receipts.getTabs().add(newReceipt.receiptContainer);
     }
@@ -71,13 +63,4 @@ public class AllReceipt {
             }
         }
     }
-
-
-
-
-
-
-
-
-
 }

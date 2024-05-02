@@ -1,5 +1,7 @@
 package org.example.database_btl.Backend;
 
+import org.example.database_btl.Exception.SqlException;
+
 import java.sql.*;
 
 public class Sql_connector {
@@ -73,21 +75,21 @@ public class Sql_connector {
     }
 
 
-    public static synchronized ResultSet executeQuery(String query) {
+    public static synchronized ResultSet executeQuery(String query) throws Exception{
         try {
             getInstance().resultSet = getInstance().statement.executeQuery(query);
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            throw new SqlException(query);
         }
         return getInstance().resultSet;
     }
 
-    public static synchronized void executeUpdate(String query) {
+    public static synchronized void executeUpdate(String query) throws Exception {
         try {
             getInstance().statement.executeUpdate(query);
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            throw new SqlException(query);
         }
     }
 

@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import org.example.database_btl.Backend.model.controller.TableController;
+import org.example.database_btl.Exception.PopUpMessage;
 import org.example.database_btl.HelloApplication;
 
 public class Table{
@@ -23,10 +24,11 @@ public class Table{
             return value;
         }
     }
-    public String ID;
-    public int Status;
 
-    public boolean isBuilt = false;
+    private String ID;
+    private int Status;
+
+    private boolean isBuilt = false;
 
     public TableController tableController;
     public Pane tableContainer;
@@ -36,9 +38,14 @@ public class Table{
         this.Status = Status;
     }
 
-    public void BuildTable(){
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Table.fxml"));
+    public String getResource(){
+        return "Table.fxml";
+    }
+    public void BuildTable(){
+        if(isBuilt) return;
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(getResource()));
         try {
             //load Fxml
             tableContainer = loader.load();
@@ -64,13 +71,16 @@ public class Table{
             isBuilt = true;
         }
         catch (Exception e) {
-            e.printStackTrace();
+            new PopUpMessage(e);
         }
     }
 
     public void setID(String ID){
         this.ID = ID;
         this.tableController.tableName.setText(ID);
+    }
+    public String getID(){
+        return this.ID;
     }
 
     public void setStatus(int Status){
@@ -82,13 +92,16 @@ public class Table{
             tableController.rectangle.setFill(Color.GREEN);
         }
     }
+    public int getStatus(){
+        return this.Status;
+    }
 
 
     public boolean compare(Table newtable){
         return this.ID.equals(newtable.ID) && this.Status == newtable.Status;
     }
     public boolean compare(String ID, int Status){
-        return this.ID.equals(ID) && this.Status == Status ;
+        return this.ID.equals(ID) && this.Status == Status;
     }
 
     public void update(Table newTable){
@@ -100,5 +113,4 @@ public class Table{
             this.setStatus(newTable.Status);
         }
     }
-
 }

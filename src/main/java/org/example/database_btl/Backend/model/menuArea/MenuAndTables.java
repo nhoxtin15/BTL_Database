@@ -60,24 +60,24 @@ public class MenuAndTables {
         //button at the end of the pane
         menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
             //loop through and add table
-            String areaName = menuAndTablesController.tabPaneAreas.getSelectionModel().getSelectedItem().getText();
-            ArrayList<String> tableList = new ArrayList<>();
-            if(areaName.equals("Vip Rooms") ){
-                tableList = areaVipRoom.getVipRoomName();
-            }
-            else {
-                for (Area a : area) {
-                    if (a.name.equals(areaName)) {
-                        tableList = a.getBookTableList();
-                        break;
-                    }
-                }
-            }
+//            String areaName = menuAndTablesController.tabPaneAreas.getSelectionModel().getSelectedItem().getText();
+//            ArrayList<String> tableList = new ArrayList<>();
+//            if(areaName.equals("Vip Rooms") ){
+//                tableList = areaVipRoom.();
+//            }
+//            else {
+//                for (Area a : area) {
+//                    if (a.name.equals(areaName)) {
+//                        tableList = a.getBookTableList();
+//                        break;
+//                    }
+//                }
+//            }
 
-            AreaReceipt areaReceipt = new AreaReceipt(areaName, tableList);
-
-
-            AllReceipt.addReceipt(areaName, areaReceipt);
+//            AreaReceipt areaReceipt = new AreaReceipt(areaName, tableList);
+//
+//
+//            AllReceipt.addReceipt(areaName, areaReceipt);
 
             if(menuAndTablesController.checkBoxOpenMenu.isSelected())
                 menuAndTablesController.tabPaneMenuAndAreas.getSelectionModel().select(1);
@@ -115,7 +115,7 @@ public class MenuAndTables {
 
         //init the vip room
         areaVipRoom = new AreaVipRoom();
-        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(areaVipRoom.tabAreaVipRoomContainer);
+        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(areaVipRoom.areaContainer);
 
 
     }
