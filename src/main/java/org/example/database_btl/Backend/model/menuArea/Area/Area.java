@@ -173,14 +173,22 @@ public class Area {
         ArrayList<String> tableList = new ArrayList<>();
         for(Table t : tables){
             if(t.getStatus() == Table.EnumStatus.SELECTED.getValue()){
-              tableList.add(t.getID());
-              t.setStatus(Table.EnumStatus.OCCUPIED.getValue());
+                tableList.add(t.getID());
+                t.setStatus(Table.EnumStatus.OCCUPIED.getValue());
+                String sqlUpdateTable = "UPDATE Table_book SET available = 1 WHERE Order_num = '" + t.getID() + "'" +"and Area_ID = '" + name + "'";
+                synchronized (Sql_connector.lock){
+                    Sql_connector.executeUpdate(sqlUpdateTable);
+                }
             }
         }
         for(VipRoom v : vipRooms){
             if(v.getStatus() == VipRoom.EnumStatus.SELECTED.getValue()){
                 tableList.add(v.getID());
                 v.setStatus(VipRoom.EnumStatus.OCCUPIED.getValue());
+                String sqlUpdateVipRoom = "UPDATE Vip_room SET available = 1 WHERE Room_code = '" + v.getID();
+                synchronized (Sql_connector.lock){
+                    Sql_connector.executeUpdate(sqlUpdateVipRoom);
+                }
             }
         }
 

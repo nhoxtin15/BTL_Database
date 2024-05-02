@@ -74,6 +74,12 @@ public class Receipt {
         productReceipt.productReceiptController.totalPriceProduct.textProperty().addListener((observable, oldValue, newValue) -> {
             updateTotalMoney();
         });
+        productReceipt.productReceiptController.quantity.textProperty().addListener((observable, oldValue, newValue) -> {
+            productReceipt.quantity =  (Integer.parseInt(newValue));
+            updateTotalMoney();
+        });
+
+
         updateTotalMoney();
 
         this.receiptController.addProduct(productReceipt);

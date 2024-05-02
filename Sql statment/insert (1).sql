@@ -242,7 +242,7 @@ VALUES
     ('00029', '1098765432'),
     ('00030', '0987654321');
 
-
+use hotpot;
 
 INSERT INTO area (Area_ID, area_name) VALUES
 ('GARD01', 'Garden Area 1'),
@@ -448,11 +448,13 @@ INSERT INTO Table_book (Order_num, Area_ID, No_seat) VALUES
 (0019, 'POOL02', 4),
 (0020, 'POOL02', 5);
 
+select * from product p, food_and_drinks f where p.product_id = f.product_id;
+select * from food_and_drinks;
 
 
 
 -- Sample data for receipt table
-INSERT INTO receipt (Receipt_ID, Date_receipt, Number_of_customer, receipt_status,, Ssn, Cus_ID)
+INSERT INTO receipt (Receipt_ID, Date_receipt, Number_of_customer, receipt_status, Ssn, Cus_ID)
 VALUES
 ('R00000001', '2024-04-01 10:00:00', 2, 'E','079345111', '000000001'),
 ('R00000002', '2024-04-01 11:30:00', 1, 'E','079456789', '000000002'),
@@ -474,7 +476,7 @@ VALUES
 ('R00000018', '2024-02-02 21:30:00', 2, 'E','019012345', '000000018');
 
 
-select * from product;
+
 
 
 INSERT INTO product (product_id, product_name, image, price)
@@ -562,13 +564,14 @@ VALUES
     ('SB0006', 'Herbalist'),
     ('SB0007', 'No flavor');
 
+
 -- Insert data into Combo table
 INSERT INTO Combo (product_id, Number_guest_recommend, time_start, time_end, ratio)
 VALUES
     ('CB0001', 4,18.00, 22.00, 30),
     ('CB0002', 6,11.00, 13.00, 35),
     ('CB0003', 8,18.00,20.30, 40),
-    ('CB0004', 10,16.00,23.00, 45)
+    ('CB0004', 10,16.00,23.00, 45);
 
 INSERT INTO include_room (receipt_id, room_code, product_id, quantity) 
 VALUES

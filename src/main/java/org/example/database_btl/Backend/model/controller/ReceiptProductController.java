@@ -70,9 +70,7 @@ public class ReceiptProductController {
             this.totalPriceProduct.setText(String.valueOf(Integer.parseInt(this.priceProduct.getText()) * Integer.parseInt(this.quantity.getText())));
         });
 
-        totalPriceProduct.textProperty().addListener((observable, oldValue, newValue) -> {
 
-        });
     }
 
 

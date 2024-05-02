@@ -87,7 +87,7 @@ public class Sql_connector {
 
     public static synchronized void executeUpdate(String query) throws Exception {
         try {
-            getInstance().statement.executeUpdate(query);
+            System.out.println(getInstance().statement.executeUpdate(query));
         } catch (SQLException throwables) {
             throw new SqlException(query);
         }

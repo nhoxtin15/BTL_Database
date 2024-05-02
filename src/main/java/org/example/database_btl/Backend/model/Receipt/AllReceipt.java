@@ -65,10 +65,9 @@ public class AllReceipt {
         }
     }
 
-    public static void mergeReceipt(String receiptA,String receiptB){
+    public static void mergeReceipt(String receiptA,String receiptB) throws Exception{
         if (receiptA.equals(receiptB)){
-            new PopUpMessage(new SameReceipt());
-            return;
+            throw new SameReceipt();
         }
         for(Receipt receipt1 : Restaurant.getInstance().allReceipt.allReceipts){
             if(receipt1.name.equals(receiptA)){
@@ -82,4 +81,5 @@ public class AllReceipt {
             }
         }
     }
+
 }

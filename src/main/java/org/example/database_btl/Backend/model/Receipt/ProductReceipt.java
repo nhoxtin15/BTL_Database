@@ -41,6 +41,7 @@ public class ProductReceipt {
             productReceiptController.quantity.setText(String.valueOf(quantity));
             productReceiptController.totalPriceProduct.setText(String.valueOf(price*quantity));
 
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

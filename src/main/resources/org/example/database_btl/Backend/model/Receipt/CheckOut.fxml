@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.Receipt.CheckOut">
+   <children>
+      <ImageView fitHeight="252.0" fitWidth="226.0" layoutX="46.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Image/login_logo.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="325.0" layoutY="34.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="89.0" text="Receipt">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <ScrollPane prefHeight="400.0" prefWidth="450.0">
+              <content>
+                <AnchorPane layoutX="300.0" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="430.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="430.0" fx:id="products"/>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <VBox alignment="TOP_RIGHT" spacing="5.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                     <children>
+                        <Label text="Total price">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField editable="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                     <children>
+                        <Label text="Point">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField promptText="Please input point  amount">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                     <children>
+                        <Label text="Final point">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField editable="false">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Button mnemonicParsing="false" text="Check out" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
