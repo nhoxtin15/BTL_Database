@@ -17,6 +17,7 @@ import org.example.database_btl.Backend.model.controller.AreaController;
 import org.example.database_btl.Backend.model.controller.MenuAndTablesController;
 import org.example.database_btl.Backend.model.menuArea.Area.Area;
 import org.example.database_btl.Backend.model.menuArea.Area.AreaVipRoom;
+import org.example.database_btl.Backend.model.menuArea.Area.Table;
 import org.example.database_btl.Backend.model.menuArea.Area.VipRoom;
 import org.example.database_btl.Backend.model.menuArea.Menu.Menu;
 import org.example.database_btl.Backend.Sql_connector;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 public class MenuAndTables {
 
     public ArrayList<Area> area;
-    public AreaVipRoom areaVipRoom;
+
 
 
     public Menu menu;
@@ -60,24 +61,18 @@ public class MenuAndTables {
         //button at the end of the pane
         menuAndTablesController.buttonCreateReceipt.setOnAction(e -> {
             //loop through and add table
-//            String areaName = menuAndTablesController.tabPaneAreas.getSelectionModel().getSelectedItem().getText();
-//            ArrayList<String> tableList = new ArrayList<>();
-//            if(areaName.equals("Vip Rooms") ){
-//                tableList = areaVipRoom.();
-//            }
-//            else {
-//                for (Area a : area) {
-//                    if (a.name.equals(areaName)) {
-//                        tableList = a.getBookTableList();
-//                        break;
-//                    }
-//                }
-//            }
+            String areaName = menuAndTablesController.tabPaneAreas.getSelectionModel().getSelectedItem().getText();
 
-//            AreaReceipt areaReceipt = new AreaReceipt(areaName, tableList);
-//
-//
-//            AllReceipt.addReceipt(areaName, areaReceipt);
+            for (Area a: area){
+                if(a.name.equals(areaName)){
+                    try {
+                        AllReceipt.addReceipt(a.getAreaReceipt());
+                    } catch (Exception exception) {
+                        new PopUpMessage(exception);
+                    }
+                    break;
+                }
+            }
 
             if(menuAndTablesController.checkBoxOpenMenu.isSelected())
                 menuAndTablesController.tabPaneMenuAndAreas.getSelectionModel().select(1);
@@ -106,17 +101,12 @@ public class MenuAndTables {
                 new PopUpMessage(e);
             }
         }
-
+        //init vip room
+        area.add(new AreaVipRoom());
 
         for (Area a : area) {
             ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(a.areaContainer);
         }
-
-
-        //init the vip room
-        areaVipRoom = new AreaVipRoom();
-        ((TabPane)menuAndTablesController.tabPaneMenuAndAreas.getTabs().getFirst().getContent()).getTabs().add(areaVipRoom.areaContainer);
-
 
     }
 

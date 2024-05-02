@@ -58,9 +58,9 @@ create table receipt (
     Date_receipt datetime,
     Number_of_customer INT,
     receipt_status char,
-    total_price int not null default 0,
     Ssn char(9),
     Cus_ID char(9),
+    total_price int not null default 0,
     foreign key (Ssn) references Employee(Ssn),
     foreign key (Cus_ID) references Customer(Cus_ID)
 );
@@ -79,8 +79,9 @@ create table Vip_room (
     constraint Area_ID_VIP foreign key (Area_ID) references Area(Area_ID)
  );
  
+ 
 create table Table_book (
-	available bool,
+	available bool default false,
 	Order_num INT,
     Area_ID char(7),
     No_seat INT,
@@ -99,13 +100,14 @@ create table review(
 create table product(
 	product_id varchar(6),
     product_name varchar(50),
-    image BLOB default null,
+    image MEdiumBLOB default null,
     price integer,
     primary key (product_id)
 );
 
 create table food_and_drinks(
 	product_id varchar(6),
+    
     foreign key (product_id) references product(product_id) on delete cascade
 );
 
@@ -121,13 +123,16 @@ create table flavor(
     foreign key (product_id) references soup_base(product_id) on delete cascade
 );
 
+drop table combo;
+
+
 create table Combo(
 	product_id VARChar(6),
     Number_guest_recommend integer,
     time_start decimal(4,2),
     time_end decimal(4,2),
     ratio integer,
-    foreign key (product_id) references soup_base(product_id) on delete cascade
+    foreign key (product_id) references product(product_id) on delete cascade
 );
 
 create table Combo_include(

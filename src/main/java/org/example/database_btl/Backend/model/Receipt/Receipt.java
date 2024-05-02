@@ -29,9 +29,15 @@ public class Receipt {
         productReceipts = new ArrayList<>();
         this.areaReceipts = new ArrayList<>();
         this.areaReceipts.add(areaReceipt);
+        this.tables = new ArrayList<>();
+        for (String i : areaReceipt.tables){
+            this.tables.add(areaReceipt.name + "_" + i);
+        }
 
         initReceipt();
     }
+
+
 
     public void initReceipt(){
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Receipt.fxml"));
@@ -39,6 +45,9 @@ public class Receipt {
             receiptContainer = loader.load();
             receiptController = loader.getController();
             receiptContainer.setText(name);
+
+
+
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -57,6 +66,10 @@ public class Receipt {
         productReceipt.productReceiptController.removeButton.setOnMouseClicked(event -> {
             removeProduct(name,price);
         });
+        for (String i : this.tables){
+            productReceipt.productReceiptController.tables.getItems().add(i);
+        }
+
         productReceipts.add(productReceipt);
         productReceipt.productReceiptController.totalPriceProduct.textProperty().addListener((observable, oldValue, newValue) -> {
             updateTotalMoney();
@@ -91,7 +104,15 @@ public class Receipt {
     }
 
 
+    public void mergeReceipt(Receipt receipt){
+        for (ProductReceipt productReceipt : receipt.productReceipts){
+            this.addProduct(productReceipt.name,productReceipt.price);
+            this.productReceipts.getLast().setQuantity(productReceipt.quantity);
+        }
+        this.areaReceipts.addAll(receipt.areaReceipts);
+        this.tables.addAll(receipt.tables);
 
+    }
 
 
 

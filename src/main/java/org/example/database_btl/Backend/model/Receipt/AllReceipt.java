@@ -6,6 +6,7 @@ import org.example.database_btl.Backend.model.Restaurant;
 import org.example.database_btl.Backend.model.controller.AllReceiptController;
 import org.example.database_btl.Backend.model.controller.RestaurantController;
 import org.example.database_btl.Exception.PopUpMessage;
+import org.example.database_btl.Exception.SameReceipt;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,9 +37,9 @@ public class AllReceipt {
 
 
 
-    public static void addReceipt(String Area, AreaReceipt areaReceipt){
-        String name = Area + "_" + receiptMap.get(Area);
-        receiptMap.put(Area,receiptMap.get(Area)+1);
+    public static void addReceipt(AreaReceipt areaReceipt){
+        String name = areaReceipt.name + "_" + receiptMap.get(areaReceipt.name);
+        receiptMap.put(areaReceipt.name,receiptMap.get(areaReceipt.name)+1);
         Receipt newReceipt = new Receipt(name,areaReceipt);
         Restaurant.getInstance().allReceipt.allReceipts.add(newReceipt);
         Restaurant.getInstance().allReceipt.allReceiptController.receipts.getTabs().add(newReceipt.receiptContainer);
@@ -60,6 +61,24 @@ public class AllReceipt {
         for(Receipt receipt : Restaurant.getInstance().allReceipt.allReceipts){
             if(receipt.name.equals(currentName)){
                 receipt.addProduct(name,price);
+            }
+        }
+    }
+
+    public static void mergeReceipt(String receiptA,String receiptB){
+        if (receiptA.equals(receiptB)){
+            new PopUpMessage(new SameReceipt());
+            return;
+        }
+        for(Receipt receipt1 : Restaurant.getInstance().allReceipt.allReceipts){
+            if(receipt1.name.equals(receiptA)){
+                for(Receipt receipt2 : Restaurant.getInstance().allReceipt.allReceipts){
+                    if(receipt2.name.equals(receiptB)){
+                        receipt1.mergeReceipt(receipt2);
+                        removeReceipt(receiptB);
+                    }
+                }
+                break;
             }
         }
     }

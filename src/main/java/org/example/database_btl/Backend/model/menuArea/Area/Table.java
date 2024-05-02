@@ -9,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import org.example.database_btl.Backend.model.controller.TableController;
 import org.example.database_btl.Exception.PopUpMessage;
+import org.example.database_btl.Exception.TableIsOccupied;
 import org.example.database_btl.HelloApplication;
 
 public class Table{
@@ -66,6 +67,10 @@ public class Table{
                 else if(this.Status == EnumStatus.FREE.value){
                     tableController.rectangle.setFill(Color.BLUE);
                     this.Status = 0;
+                }
+                else{
+                    //Ocupied
+                    new PopUpMessage(new TableIsOccupied());
                 }
             });
             isBuilt = true;

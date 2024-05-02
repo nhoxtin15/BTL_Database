@@ -172,13 +172,15 @@ public class Area {
     public AreaReceipt getAreaReceipt() throws Exception{
         ArrayList<String> tableList = new ArrayList<>();
         for(Table t : tables){
-            if(t.getStatus() == Table.EnumStatus.OCCUPIED.getValue()){
+            if(t.getStatus() == Table.EnumStatus.SELECTED.getValue()){
               tableList.add(t.getID());
+              t.setStatus(Table.EnumStatus.OCCUPIED.getValue());
             }
         }
         for(VipRoom v : vipRooms){
-            if(v.getStatus() == VipRoom.EnumStatus.OCCUPIED.getValue()){
+            if(v.getStatus() == VipRoom.EnumStatus.SELECTED.getValue()){
                 tableList.add(v.getID());
+                v.setStatus(VipRoom.EnumStatus.OCCUPIED.getValue());
             }
         }
 

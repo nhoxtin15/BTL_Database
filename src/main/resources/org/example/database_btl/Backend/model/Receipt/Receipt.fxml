@@ -11,7 +11,7 @@
 
 <Tab text="Untitled Tab" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.controller.ReceiptController">
     <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="700.0">
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="750.0">
             <children>
                 <VBox prefHeight="570.0" prefWidth="700.0">
                     <children>

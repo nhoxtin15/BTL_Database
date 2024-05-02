@@ -37,7 +37,8 @@ public class ReceiptProductController {
     public Label totalPriceProduct;
 
 
-
+    @FXML
+    public ChoiceBox<String> tables;
 
 
     @FXML

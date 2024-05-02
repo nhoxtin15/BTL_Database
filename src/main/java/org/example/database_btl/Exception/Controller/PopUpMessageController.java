@@ -20,7 +20,7 @@ public class PopUpMessageController {
 
     public void ExitPopup(ActionEvent event){
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.hide();
+        stage.close();
     }
 
 }
