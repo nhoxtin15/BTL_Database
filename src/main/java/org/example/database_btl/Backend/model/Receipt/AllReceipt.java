@@ -5,6 +5,7 @@ import javafx.scene.layout.VBox;
 import org.example.database_btl.Backend.model.Restaurant;
 import org.example.database_btl.Backend.model.controller.AllReceiptController;
 import org.example.database_btl.Backend.model.controller.RestaurantController;
+import org.example.database_btl.Exception.NoReceipt;
 import org.example.database_btl.Exception.PopUpMessage;
 import org.example.database_btl.Exception.SameReceipt;
 
@@ -78,6 +79,22 @@ public class AllReceipt {
                     }
                 }
                 break;
+            }
+        }
+    }
+
+    public static void checkout(){
+        if (Restaurant.getInstance().allReceipt.allReceiptController.receipts.getSelectionModel().getSelectedItem() == null){
+            new PopUpMessage(new NoReceipt());
+            return;
+        }
+
+
+        String currentName = Restaurant.getInstance().allReceipt.allReceiptController.receipts.getSelectionModel().getSelectedItem().getText();
+        for(Receipt receipt : Restaurant.getInstance().allReceipt.allReceipts){
+            if(receipt.name.equals(currentName)){
+                receipt.checkout();
+
             }
         }
     }

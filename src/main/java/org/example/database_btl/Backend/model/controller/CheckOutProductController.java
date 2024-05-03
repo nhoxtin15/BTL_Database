@@ -10,12 +10,14 @@ import javafx.scene.control.Label;
  */
 public class CheckOutProductController {
     @FXML
-    Label Name;
+    public Label ID;
+    @FXML
+    public Label Name;
 
     @FXML
-    Label Quantity;
+    public Label Quantity;
     @FXML
-    Label Price;
+    public Label Price;
     @FXML
-    Label totalPrice;
+    public Label totalPrice;
 }

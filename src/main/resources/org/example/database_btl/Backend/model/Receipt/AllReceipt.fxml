@@ -26,7 +26,7 @@
                   <Font name="System Bold" size="28.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #0f7ad0;" text="Check out" textFill="WHITE">
+            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="160.0" style="-fx-background-color: #0f7ad0;" text="Check out" textFill="WHITE" onAction="#checkOut">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>

@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
+import org.example.database_btl.Backend.model.Receipt.AllReceipt;
 import org.example.database_btl.Exception.Controller.PopUpMessageController;
 import org.example.database_btl.Exception.NoReceipt;
 import org.example.database_btl.Exception.PopUpMessage;
@@ -47,6 +48,9 @@ public class AllReceiptController {
             new PopUpMessage(e);
         }
 
+    }
+    public void checkOut(ActionEvent event){
+        AllReceipt.checkout();
     }
 
 

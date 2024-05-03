@@ -1,8 +1,14 @@
 package org.example.database_btl.Backend.model.Receipt;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Tab;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import org.example.database_btl.Backend.model.Restaurant;
+import org.example.database_btl.Backend.model.controller.CheckOutController;
 import org.example.database_btl.Backend.model.controller.ReceiptController;
 
 import java.util.ArrayList;
@@ -121,6 +127,26 @@ public class Receipt {
     }
 
 
+    public void checkout(){
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout.fxml"));
+        try{
+            Parent checkout = loader.load();
+            CheckOutController checkOutController = loader.getController();
+            long totalPrice = 0;
+            for (ProductReceipt productReceipt : productReceipts){
+                checkOutController.addProduct(productReceipt);
+                totalPrice += (long) productReceipt.price * productReceipt.quantity;
+            }
+            checkOutController.totalPrice.setText(String.valueOf(totalPrice));
+            checkOutController.finalPrice.setText(String.valueOf(totalPrice));
+            Stage stage = new Stage();
+            stage.setScene(new javafx.scene.Scene(checkout));
+            stage.show();
 
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
 
 }
