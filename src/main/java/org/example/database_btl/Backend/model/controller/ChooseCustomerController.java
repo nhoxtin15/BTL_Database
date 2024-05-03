@@ -2,10 +2,15 @@ package org.example.database_btl.Backend.model.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.example.database_btl.Backend.Sql_connector;
+import org.example.database_btl.Exception.PopUpMessage;
+import org.example.database_btl.HelloApplication;
 
 import java.sql.ResultSet;
 
@@ -62,6 +67,28 @@ public class ChooseCustomerController {
         //close the tab
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    public void register(ActionEvent event){
+        //open the register customer tab
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/CustomerRegisteration.fxml"));
+        try{
+            Parent root = loader.load();
+            CustomerRegisterController controller = loader.getController();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            Stage currentstage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            currentstage.hide();
+            stage.showAndWait();
+
+            currentstage.show();
+
+
+
+        }
+        catch (Exception e){
+            new PopUpMessage(e);
+        }
     }
 
 

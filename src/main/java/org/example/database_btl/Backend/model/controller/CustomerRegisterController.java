@@ -41,8 +41,10 @@ public class CustomerRegisterController {
 
 
     public void initialize() {
+        //customerSex = new ChoiceBox<>();
         customerSex.getItems().add("Male");
         customerSex.getItems().add("Female");
+
     }
 
 
@@ -72,7 +74,14 @@ public class CustomerRegisterController {
 
     }
 
-
+    public void addPhone(){
+        if(customerPhone.getText().isEmpty()){
+            new PopUpMessage(new EmptyInfomation());
+            return;
+        }
+        customerPhones.appendText(customerPhone.getText()+"\n");
+        customerPhone.clear();
+    }
 
 
 

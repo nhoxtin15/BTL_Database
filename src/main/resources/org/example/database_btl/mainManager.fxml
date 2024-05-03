@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #399be2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Controller.MainEmployeeController">
+    <children>
+        <VBox fx:id="mainVbox" maxWidth="900.0">
+            <children>
+                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="927.0">
+                    <children>
+                        <MenuButton mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #399be2; -fx-mark-color: transparent;" text="abc" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Image/menu.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                                <MenuItem mnemonicParsing="false" text="Action 2" />
+                            </items>
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </MenuButton>
+                    </children>
+                </HBox>
+            <HBox alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <children>
+                  <Label text="Employee" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="650.0" prefWidth="200.0">
+               <children>
+                  <ScrollPane fitToWidth="true" prefHeight="650.0" prefWidth="650.0">
+                     <content>
+                        <TableView prefHeight="655.0" prefWidth="634.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="SSN" />
+                            <TableColumn prefWidth="75.0" text="Sex" />
+                              <TableColumn prefWidth="113.04856872558594" text="Work_start_date" />
+                              <TableColumn prefWidth="81.843017578125" text="FName" />
+                              <TableColumn prefWidth="81.843017578125" text="LName" />
+                              <TableColumn prefWidth="81.843017578125" text="Salary" />
+                              <TableColumn prefWidth="120.04852294921875" text="BirthDate" />
+                          </columns>
+                        </TableView>
+                     </content>
+                  </ScrollPane>
+                  <VBox prefHeight="650.0" prefWidth="183.0" spacing="10.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Add Employee" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Remove Employee" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Managing employee" />
+                     </children>
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets left="10.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+                <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="1200.0" spacing="20.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="NEVER">
+                            <children>
+                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Image/phone.png" />
+                                    </image>
+                                </ImageView>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact: 1900 000có">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="NEVER">
+                            <children>
+                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Image/location.png" />
+                                    </image>
+                                </ImageView>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Database class">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="NEVER">
+                            <children>
+                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Image/info.png" />
+                                    </image>
+                                </ImageView>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Database class">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="NEVER">
+                            <children>
+                                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Version 1.0">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

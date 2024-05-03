@@ -79,7 +79,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <ChoiceBox prefWidth="250.0" />
+                  <ChoiceBox prefWidth="250.0" fx:id="customerSex"/>
                </children>
                <padding>
                   <Insets left="20.0" right="30.0" />
@@ -93,7 +93,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="customerPhone" prefHeight="26.0" prefWidth="150.0" />
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Add Phone" />
+                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Add Phone" onAction="#addPhone"/>
                </children>
                <padding>
                   <Insets left="20.0" right="30.0" />
