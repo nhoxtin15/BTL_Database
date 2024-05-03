@@ -47,14 +47,14 @@ public class ProductReceipt {
         }
     }
 
-    public void increaseQuantity(){
-        quantity++;
-        productReceiptController.quantity.setText(String.valueOf(quantity));
+    public void increaseQuantity(int quantity){
+        this.quantity+=quantity;
+        productReceiptController.quantity.setText(String.valueOf(this.quantity));
 
     }
     public void setQuantity(int quantity){
         this.quantity = quantity;
-        productReceiptController.quantity.setText(String.valueOf(quantity));
+        productReceiptController.quantity.setText(String.valueOf(this.quantity));
     }
 
     public void setID(int ID){

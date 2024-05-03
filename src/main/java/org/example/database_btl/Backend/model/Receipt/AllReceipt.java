@@ -61,7 +61,7 @@ public class AllReceipt {
         String currentName = Restaurant.getInstance().allReceipt.allReceiptController.receipts.getSelectionModel().getSelectedItem().getText();
         for(Receipt receipt : Restaurant.getInstance().allReceipt.allReceipts){
             if(receipt.name.equals(currentName)){
-                receipt.addProduct(name,price);
+                receipt.addProduct(name,price,1);
             }
         }
     }

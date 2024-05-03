@@ -60,10 +60,11 @@ public class Receipt {
         }
     }
 
-    public void addProduct(String name, int price){
+    public void addProduct(String name, int price,int quantity){
         for (ProductReceipt productReceipt : productReceipts){
             if(productReceipt.name.equals(name)){
-                productReceipt.increaseQuantity();
+                System.out.println("Increase quantity");
+                productReceipt.increaseQuantity(quantity);
                 return;
             }
         }
@@ -118,7 +119,7 @@ public class Receipt {
 
     public void mergeReceipt(Receipt receipt){
         for (ProductReceipt productReceipt : receipt.productReceipts){
-            this.addProduct(productReceipt.name,productReceipt.price);
+            this.addProduct(productReceipt.name,productReceipt.price,productReceipt.quantity);
             this.productReceipts.getLast().setQuantity(productReceipt.quantity);
         }
         this.areaReceipts.addAll(receipt.areaReceipts);

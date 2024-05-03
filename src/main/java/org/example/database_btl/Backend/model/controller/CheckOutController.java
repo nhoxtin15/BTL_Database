@@ -2,6 +2,8 @@ package org.example.database_btl.Backend.model.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -38,6 +40,18 @@ public class CheckOutController {
             controller.totalPrice.setText(String.valueOf(productReceipt.quantity * productReceipt.price));
 
             productContainer.getChildren().add(product);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void ChooseCustomer(){
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/ChooseCustomer.fxml"));
+        try{
+            Parent product = loader.load();
+            ChooseCustomerController controller = loader.getController();
+
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

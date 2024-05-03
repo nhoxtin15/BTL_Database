@@ -26,8 +26,9 @@ public class PopUpMessage{
 
     public PopUpMessage(Exception e){
         this.message = e.getMessage();
-        this.errorName = e.getClass().getName();
+        this.errorName = e.getCause().toString();
         e.printStackTrace();
+        System.out.println("-----------------------------------------\n\n\n\n\n\n\n\n\n\n\n\n-----------------------------------------");
         this.display();
     }
 

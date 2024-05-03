@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import org.example.database_btl.Backend.model.Receipt.AllReceipt;
 import org.example.database_btl.Backend.model.controller.ProductController;
+import org.example.database_btl.Exception.*;
 
 public class Product {
 
@@ -40,11 +41,12 @@ public class Product {
             productController.textName.setText(name);
             productController.labelPrice.setText(price+" VND");
             productController.imageProduct.setImage(image);
+
             this.productContainer.setOnMouseClicked(event -> {
                 try {
                     AllReceipt.addProduct(this.name,this.price);
                 } catch (Exception e) {
-                    System.out.println(e.getMessage());
+                    new PopUpMessage(e);
                 }
             });
             isInit = true;
