@@ -10,11 +10,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="342.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Manager.controller.CustomerRegisterController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="342.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21"
+            fx:controller="org.example.database_btl.Manager.controller.EmployeeRegisterController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="351.0" prefWidth="400.0" spacing="10.0">
             <children>
-                <Label text="Customer registeration">
+                <Label text="Employee registeration">
                     <font>
                         <Font name="System Bold" size="20.0" />
                     </font>
@@ -26,7 +27,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="customerFName" prefHeight="26.0" prefWidth="250.0" promptText="Please insert your First Name" />
+                        <TextField fx:id="employeeFName" prefHeight="26.0" prefWidth="250.0" promptText="Please insert your First Name" />
                     </children>
                     <padding>
                         <Insets left="20.0" right="30.0" />
@@ -39,7 +40,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="customerLName" prefHeight="26.0" prefWidth="250.0" promptText="Please insert your Last Name" />
+                        <TextField fx:id="employeeLName" prefHeight="26.0" prefWidth="250.0" promptText="Please insert your Last Name" />
                     </children>
                     <padding>
                         <Insets left="20.0" right="30.0" />
@@ -52,7 +53,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="customerSSN" prefHeight="26.0" prefWidth="250.0" promptText="Please insert your SSN" />
+                        <TextField fx:id="employeeSSN" prefHeight="26.0" prefWidth="250.0" promptText="Please insert your SSN" />
                     </children>
                     <padding>
                         <Insets left="20.0" right="30.0" />
@@ -65,7 +66,7 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="customerDOB" prefHeight="26.0" prefWidth="250.0" promptText="DOB in the format: yyyy-mm-dd" />
+                        <TextField fx:id="employeeBirthdate" prefHeight="26.0" prefWidth="250.0" promptText="DOB in the format: yyyy-mm-dd" />
                     </children>
                     <padding>
                         <Insets left="20.0" right="30.0" />
@@ -78,7 +79,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="customerDOB1" prefHeight="26.0" prefWidth="250.0" promptText="Start date in the format: yyyy-mm-dd" />
+                  <TextField fx:id="employeeWork_start_date" prefHeight="26.0" prefWidth="250.0" promptText="Start date in the format: yyyy-mm-dd" />
                </children>
                <padding>
                   <Insets left="20.0" right="30.0" />
@@ -91,7 +92,7 @@
                         <Font size="16.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="customerDOB11" prefHeight="26.0" prefWidth="250.0" promptText="Please input Salary" />
+                  <TextField fx:id="employeeSalary" prefHeight="26.0" prefWidth="250.0" promptText="Please input Salary" />
                </children>
                <padding>
                   <Insets left="20.0" right="30.0" />
@@ -104,13 +105,13 @@
                                 <Font size="16.0" />
                             </font>
                         </Label>
-                        <ChoiceBox fx:id="customerSex" prefWidth="250.0" />
+                        <ChoiceBox fx:id="employeeSex" prefWidth="250.0" />
                     </children>
                     <padding>
                         <Insets left="20.0" right="30.0" />
                     </padding>
                 </HBox>
-                <Button mnemonicParsing="false" onAction="#registerCustomer" text="Register" />
+                <Button mnemonicParsing="false" onAction="#registerEmployee" text="Register" />
             </children>
             <padding>
                 <Insets top="20.0" />

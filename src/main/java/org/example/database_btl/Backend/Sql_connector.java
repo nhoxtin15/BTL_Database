@@ -20,8 +20,8 @@ public class Sql_connector {
     //                            //
     ////////////////////////////////
 
-    private final String user ;
-    private final String password ;
+    private String user ;
+    private String password ;
 
     private  Connection Sql_server;
     private  Statement statement;
@@ -35,11 +35,11 @@ public class Sql_connector {
     ////////////////////////////////
     public static final Object lock = new Object();
 
-    private Sql_connector() {
-        user = "root";
-        password = "nhoxtin1";
-
+    private Sql_connector(String user, String password) {
+        this.user = user;
+        this.password = password;
     }
+
 
     ////////////////////////////////
     //  SqlConnector's SingleTon  //
@@ -47,12 +47,13 @@ public class Sql_connector {
     ////////////////////////////////
 
     private static  Sql_connector instance;
-    public static synchronized Sql_connector getInstance() {
-        if(instance == null) {
-            instance = new Sql_connector();
-            connect();
-        }
+    public static synchronized Sql_connector getInstance(){
         return instance;
+    }
+
+    public static synchronized void setInstance(String user, String password){
+        instance = new Sql_connector(user, password);
+        connect();
     }
 
 

@@ -9,54 +9,67 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="176.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Manager.controller.AddAddressController">
+<Pane prefHeight="300.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Manager.controller.AddAddressController">
     <children>
         <VBox fillWidth="false" prefWidth="300.0" spacing="20.0">
             <children>
                 <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="300.0">
                     <children>
-                        <Label text="Phones Adder">
+                        <Label text="Addresses Adder">
                             <font>
                                 <Font name="System Bold" size="16.0" />
                             </font>
                         </Label>
                     </children>
                 </HBox>
-                <VBox pickOnBounds="false" prefHeight="0.0" prefWidth="212.0" spacing="10.0" VBox.vgrow="NEVER">
-                    <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="208.0" spacing="5.0">
-                            <children>
-                                <Label prefWidth="35.0" text="SSN" />
-                                <TextField fx:id="PhoneToFind" prefWidth="150.0" />
-                            </children>
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
-                            <padding>
-                                <Insets left="10.0" />
-                            </padding>
-                        </HBox>
-                    </children>
-                </VBox>
-            <VBox pickOnBounds="false" prefHeight="0.0" prefWidth="212.0" spacing="10.0">
-               <children>
-                  <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="208.0" spacing="5.0">
-                     <children>
-                        <Label prefWidth="35.0" text="Phone" />
-                        <TextField fx:id="PhoneToFind1" prefWidth="150.0" />
-                     </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
+                  <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="270.0" spacing="5.0">
+                      <children>
+                          <Label prefWidth="150.0" text="SSN" />
+                          <TextField fx:id="employeeSSN" prefWidth="200.0" />
+                      </children>
+                      <VBox.margin>
+                          <Insets />
+                      </VBox.margin>
+                      <padding>
+                          <Insets left="10.0" />
+                      </padding>
                   </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="270.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="150.0" text="Street address" />
+                  <TextField fx:id="street_address" prefWidth="200.0" />
                </children>
-            </VBox>
-                <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="280.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="270.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="150.0" text="District" />
+                  <TextField fx:id="district" prefWidth="200.0" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="270.0" spacing="5.0">
+               <children>
+                  <Label prefWidth="150.0" text="Province" />
+                  <TextField fx:id="province" prefWidth="200.0" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+                <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="270.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#findCustomer" text="Add phone to the employee" />
+                        <Button mnemonicParsing="false" onAction="#addAddress" text="Add phone to the employee" />
                     </children>
                     <VBox.margin>
                         <Insets right="20.0" />
