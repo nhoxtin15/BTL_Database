@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import org.example.database_btl.Backend.model.Receipt.ProductReceipt;
 import org.example.database_btl.HelloApplication;
 
@@ -28,6 +29,13 @@ public class CheckOutController {
     @FXML
     public TextField finalPrice;
 
+    @FXML
+    public TextField customer;
+
+    @FXML
+    public TextField customerPoint;
+
+
     public void addProduct(ProductReceipt productReceipt){
         FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/CheckOutProduct.fxml"));
         try{
@@ -45,15 +53,41 @@ public class CheckOutController {
         }
     }
 
-    public void ChooseCustomer(){
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/ChooseCustomer.fxml"));
+    public void chooseCustomer(){
+        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/CustomerChooser.fxml"));
         try{
             Parent product = loader.load();
             ChooseCustomerController controller = loader.getController();
+            Scene scene = new Scene(product);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+            customer.setText(controller.customerName);
+            customerPoint.setText(controller.customerPoint);
 
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void initialize(){
+        customer.setText("No customer");
+        customerPoint.setText("0");
+
+        this.point.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d+")) {
+                point.setText(oldValue);
+                return;
+            }
+            int pointHave = Integer.parseInt(customerPoint.getText());
+            int pointUsed = Integer.parseInt(newValue);
+            if(pointUsed > pointHave) {
+                point.setText(oldValue);
+                return;
+            }
+
+        });
+
     }
 }

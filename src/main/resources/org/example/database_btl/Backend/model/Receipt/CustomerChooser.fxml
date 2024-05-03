@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.Receipt.CustomerChooser">
+<Pane prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Backend.model.controller.ChooseCustomerController">
    <children>
       <VBox fillWidth="false" prefWidth="300.0" spacing="20.0">
          <children>
@@ -28,7 +28,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="208.0" spacing="5.0">
                      <children>
                         <Label prefWidth="35.0" text="Phone" />
-                        <TextField prefWidth="150.0" />
+                        <TextField prefWidth="150.0"  fx:id="PhoneToFind"/>
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -39,8 +39,8 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="204.0" spacing="5.0">
                      <children>
-                        <Label prefWidth="35.0" text="SSN  " />
-                        <TextField prefWidth="150.0" />
+                        <Label prefWidth="35.0" text="SSN"  />
+                        <TextField prefWidth="150.0" fx:id="SSNToFind"/>
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -53,7 +53,7 @@
             </VBox>
             <HBox alignment="TOP_RIGHT" prefHeight="26.0" prefWidth="280.0">
                <children>
-                  <Button mnemonicParsing="false" text="Find Customer" />
+                  <Button mnemonicParsing="false" text="Find Customer"  onAction="#findCustomer"/>
                </children>
                <VBox.margin>
                   <Insets right="20.0" />
@@ -74,7 +74,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="208.0" spacing="5.0">
                      <children>
                         <Label prefWidth="35.0" text="Name" />
-                        <TextField editable="false" prefWidth="150.0" />
+                        <TextField editable="false" prefWidth="150.0" fx:id="CustomerFound" />
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -86,7 +86,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="294.0" spacing="5.0">
                      <children>
                         <Label prefWidth="35.0" text="Point" />
-                        <TextField editable="false" prefWidth="150.0" />
+                        <TextField editable="false" prefWidth="150.0" fx:id="PointFound" />
                      </children>
                      <VBox.margin>
                         <Insets />
@@ -97,8 +97,8 @@
                   </HBox>
                   <HBox alignment="TOP_RIGHT" prefWidth="300.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Close" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="125.0" text="Choose Customer" />
+                        <Button mnemonicParsing="false" text="Cancel" onAction="#cancel" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="125.0" text="Choose Customer" onAction="#chooseCustomer"/>
                      </children>
                      <VBox.margin>
                         <Insets right="2.0" />
