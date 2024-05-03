@@ -36,4 +36,7 @@ module org.example.database_btl {
     opens org.example.database_btl.Manager.controller to javafx.fxml;
     exports org.example.database_btl.Manager.controller;
 
+    opens org.example.database_btl.Manager.model to javafx.fxml;
+    exports org.example.database_btl.Manager.model;
+
 }

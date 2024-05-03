@@ -123,7 +123,7 @@ create table flavor(
     foreign key (product_id) references soup_base(product_id) on delete cascade
 );
 
-drop table combo;
+
 
 
 create table Combo(

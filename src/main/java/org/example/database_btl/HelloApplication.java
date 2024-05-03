@@ -60,7 +60,6 @@ public class HelloApplication extends Application {
             stage.setY(bounds.getMinY());
         }
 
-        System.out.println(getClass().getResource("Image/login_logo.png").toString());
         stage.getIcons().add(new Image(getClass().getResource("Image/login_logo.png").toString()));
 
 

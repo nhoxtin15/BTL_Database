@@ -13,6 +13,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.example.database_btl.Backend.Sql_connector;
 import org.example.database_btl.Exception.PopUpMessage;
 import org.example.database_btl.HelloApplication;
 
@@ -35,11 +36,25 @@ public class LoginController{
 
     @FXML
     protected void onLoginButtonClick(ActionEvent event) throws Exception {
+        if (username.getText().isEmpty() || password.getText().isEmpty()){
+            new PopUpMessage(new Exception("Please fill in all the information"));
+            return;
+        }
 
+        try {
+            Sql_connector.setInstance(username.getText(), password.getText());
+        }
+        catch (Exception e){
+            new PopUpMessage(new Exception("Wrong username or password"));
+        }
 
 
         //login succesfully
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("mainEmployee.fxml"));
+        FXMLLoader loader;
+        if(username.getText().equals("sManager"))
+            loader= new  FXMLLoader(HelloApplication.class.getResource("mainManager.fxml"));
+        else loader= new  FXMLLoader(HelloApplication.class.getResource("mainEmployee.fxml"));
+
         try {
             Scene scene = new Scene(loader.load());
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

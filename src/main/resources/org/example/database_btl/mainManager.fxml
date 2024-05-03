@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #399be2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Controller.MainEmployeeController">
+<AnchorPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="900.0" style="-fx-background-color: #399be2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Controller.MainManagerController">
     <children>
         <VBox fx:id="mainVbox" maxWidth="900.0">
             <children>
@@ -56,24 +56,26 @@
                <children>
                   <ScrollPane fitToWidth="true" prefHeight="650.0" prefWidth="650.0">
                      <content>
-                        <TableView prefHeight="655.0" prefWidth="634.0">
+                        <TableView prefHeight="655.0" prefWidth="634.0" fx:id="employeeTable">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="SSN" />
-                            <TableColumn prefWidth="75.0" text="Sex" />
-                              <TableColumn prefWidth="113.04856872558594" text="Work_start_date" />
-                              <TableColumn prefWidth="81.843017578125" text="FName" />
-                              <TableColumn prefWidth="81.843017578125" text="LName" />
-                              <TableColumn prefWidth="81.843017578125" text="Salary" />
-                              <TableColumn prefWidth="120.04852294921875" text="BirthDate" />
+                            <TableColumn prefWidth="75.0" text="SSN" fx:id="employeeSSN"/>
+                            <TableColumn prefWidth="75.0" text="Sex" fx:id="employeeSex"/>
+                              <TableColumn prefWidth="113.04856872558594" text="Work_start_date" fx:id="employeeWork_start_date"/>
+                              <TableColumn prefWidth="81.843017578125" text="FName" fx:id="employeeFName"/>
+                              <TableColumn prefWidth="81.843017578125" text="LName" fx:id="employeeLName"/>
+                              <TableColumn prefWidth="81.843017578125" text="Salary" fx:id="employeeSalary"/>
+                              <TableColumn prefWidth="120.04852294921875" text="BirthDate" fx:id="employeeBirthdate"/>
                           </columns>
                         </TableView>
                      </content>
                   </ScrollPane>
                   <VBox prefHeight="650.0" prefWidth="183.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Add Employee" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Remove Employee" />
-                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Managing employee" />
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Add Employee" onAction="#addEmployee"/>
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Remove Employee" onAction="#removeEmployee"/>
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Add Phone" onAction="#addPhone"/>
+                         <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Add Address" onAction="#addAddress"/>
+                        <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="View Report" />
                      </children>
                      <HBox.margin>
                         <Insets left="10.0" top="20.0" />

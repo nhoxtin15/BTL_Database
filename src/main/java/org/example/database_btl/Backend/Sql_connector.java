@@ -51,7 +51,7 @@ public class Sql_connector {
         return instance;
     }
 
-    public static synchronized void setInstance(String user, String password){
+    public static synchronized void setInstance(String user, String password) throws Exception{
         instance = new Sql_connector(user, password);
         connect();
     }
@@ -64,14 +64,12 @@ public class Sql_connector {
     //////////////////////////////////
 
 
-    public static synchronized void connect() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            getInstance().Sql_server = DriverManager.getConnection(url, getInstance().user, getInstance().password);
-            getInstance().statement = getInstance().Sql_server.createStatement();
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+    public static synchronized void connect() throws  Exception{
+
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        getInstance().Sql_server = DriverManager.getConnection(url, getInstance().user, getInstance().password);
+        getInstance().statement = getInstance().Sql_server.createStatement();
+
 
     }
 
