@@ -7,12 +7,9 @@ package database_btl.Backend.model.menuArea.Menu;
  */
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
-import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
 import database_btl.Backend.Sql_connector;
-import database_btl.Backend.model.controller.CategoryController;
+import database_btl.Backend.model.menuArea.Menu.Controller.CategoryController;
 
-import java.io.ByteArrayInputStream;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 

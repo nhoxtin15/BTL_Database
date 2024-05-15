@@ -6,19 +6,11 @@ package database_btl.Backend.model.menuArea;
  * Date: 27/04/2024$
  */
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.VBox;
 import database_btl.Backend.model.Receipt.AllReceipt;
-import database_btl.Backend.model.Receipt.AreaReceipt;
-import database_btl.Backend.model.Receipt.Receipt;
-import database_btl.Backend.model.Restaurant;
-import database_btl.Backend.model.controller.AreaController;
-import database_btl.Backend.model.controller.MenuAndTablesController;
 import database_btl.Backend.model.menuArea.Area.Area;
 import database_btl.Backend.model.menuArea.Area.AreaVipRoom;
-import database_btl.Backend.model.menuArea.Area.Table;
-import database_btl.Backend.model.menuArea.Area.VipRoom;
 import database_btl.Backend.model.menuArea.Menu.Menu;
 import database_btl.Backend.Sql_connector;
 import database_btl.Exception.PopUpMessage;

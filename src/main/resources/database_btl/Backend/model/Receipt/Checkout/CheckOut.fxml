@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.controller.CheckOutController">
+<AnchorPane prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.Receipt.Checkout.Controller.CheckOutController">
    <children>
       <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="12.5" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
          <image>

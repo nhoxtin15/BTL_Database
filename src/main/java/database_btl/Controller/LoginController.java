@@ -42,6 +42,7 @@ public class LoginController{
         }
         catch (Exception e){
             new PopUpMessage(new Exception("Wrong username or password"));
+            return;
         }
 
 

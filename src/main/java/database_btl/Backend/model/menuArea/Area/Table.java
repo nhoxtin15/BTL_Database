@@ -7,10 +7,9 @@ package database_btl.Backend.model.menuArea.Area;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import database_btl.Backend.model.controller.TableController;
+import database_btl.Backend.model.menuArea.Area.Controller.TableController;
 import database_btl.Exception.PopUpMessage;
 import database_btl.Exception.TableIsOccupied;
-import database_btl.HelloApplication;
 
 public class Table{
     public enum EnumStatus{

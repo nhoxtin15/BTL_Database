@@ -2,7 +2,7 @@ package database_btl.Backend.model.Receipt;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
-import database_btl.Backend.model.controller.ReceiptProductController;
+import database_btl.Backend.model.Receipt.Controller.ReceiptProductController;
 
 /**
  * Description: Store the product in the receipt$

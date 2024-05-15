@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Tab fx:id="category" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.controller.CategoryController" closable="false">
+<Tab fx:id="category" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.menuArea.Menu.Controller.CategoryController" closable="false">
     <ScrollPane>
         <content>
             <GridPane fx:id="products" hgap="1.0" vgap="1.0">

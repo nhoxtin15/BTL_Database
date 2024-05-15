@@ -3,8 +3,7 @@ package database_btl.Backend.model.Receipt;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.VBox;
 import database_btl.Backend.model.Restaurant;
-import database_btl.Backend.model.controller.AllReceiptController;
-import database_btl.Backend.model.controller.RestaurantController;
+import database_btl.Backend.model.Receipt.Controller.AllReceiptController;
 import database_btl.Exception.NoReceipt;
 import database_btl.Exception.PopUpMessage;
 import database_btl.Exception.SameReceipt;
@@ -94,7 +93,6 @@ public class AllReceipt {
         for(Receipt receipt : Restaurant.getInstance().allReceipt.allReceipts){
             if(receipt.name.equals(currentName)){
                 receipt.checkout();
-
             }
         }
     }

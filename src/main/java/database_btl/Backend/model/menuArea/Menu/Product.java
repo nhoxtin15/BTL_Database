@@ -10,7 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import database_btl.Backend.model.Receipt.AllReceipt;
-import database_btl.Backend.model.controller.ProductController;
+import database_btl.Backend.model.menuArea.Menu.Controller.ProductController;
 import database_btl.Exception.*;
 import database_btl.HelloApplication;
 

@@ -1,15 +1,11 @@
 package database_btl.Backend.model.Receipt;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Tab;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import database_btl.Backend.model.Restaurant;
-import database_btl.Backend.model.controller.CheckOutController;
-import database_btl.Backend.model.controller.ReceiptController;
+import database_btl.Backend.model.Receipt.Checkout.Controller.CheckOutController;
+import database_btl.Backend.model.Receipt.Controller.ReceiptController;
 
 import java.util.ArrayList;
 

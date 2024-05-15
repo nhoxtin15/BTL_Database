@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.controller.ChooseCustomerController">
+<Pane prefHeight="350.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.Receipt.Checkout.Controller.ChooseCustomerController">
    <children>
       <VBox fillWidth="false" prefWidth="300.0" spacing="20.0">
          <children>

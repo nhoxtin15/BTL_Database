@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Tab;
 import database_btl.Backend.Sql_connector;
 import database_btl.Backend.model.Receipt.AreaReceipt;
-import database_btl.Backend.model.controller.AreaController;
+import database_btl.Backend.model.menuArea.Area.Controller.AreaController;
 import database_btl.Exception.NoTableException;
 import database_btl.Exception.PopUpMessage;
 

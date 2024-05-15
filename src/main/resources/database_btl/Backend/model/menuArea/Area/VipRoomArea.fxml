@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<Tab fx:id="AreaVipRoom" closable="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.controller.AreaVipRoomController">
+<Tab fx:id="AreaVipRoom" closable="false" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.menuArea.Area.Controller.AreaVipRoomController">
     <ScrollPane maxHeight="670.0">
         <content>
             <GridPane fx:id="vipRooms" hgap="1.0" vgap="1.0">

@@ -6,11 +6,6 @@ package database_btl.Backend.model.menuArea.Area;
  * Date: 27/04/2024$
  */
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import database_btl.Backend.model.controller.VipRoomController;
-
 public class VipRoom extends Table{
 
 

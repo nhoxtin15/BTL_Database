@@ -9,7 +9,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.geometry.Insets?>
 
-<Tab text="Untitled Tab" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.controller.ReceiptController">
+<Tab text="Untitled Tab" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.Receipt.Controller.ReceiptController">
     <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="750.0">
             <children>

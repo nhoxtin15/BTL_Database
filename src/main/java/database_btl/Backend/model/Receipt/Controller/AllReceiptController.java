@@ -1,4 +1,4 @@
-package database_btl.Backend.model.controller;
+package database_btl.Backend.model.Receipt.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
 import database_btl.Backend.model.Receipt.AllReceipt;
-import database_btl.Exception.Controller.PopUpMessageController;
 import database_btl.Exception.NoReceipt;
 import database_btl.Exception.PopUpMessage;
 import database_btl.HelloApplication;

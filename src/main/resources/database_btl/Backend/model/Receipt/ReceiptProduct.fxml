@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="80.0" prefWidth="605.0" style="-fx-border-color: #000000; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.controller.ReceiptProductController">
+<AnchorPane prefHeight="80.0" prefWidth="605.0" style="-fx-border-color: #000000; -fx-border-width: 2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Backend.model.Receipt.Controller.ReceiptProductController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="680.0" spacing="10.0">
          <children>

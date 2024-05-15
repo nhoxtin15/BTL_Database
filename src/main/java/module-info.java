@@ -38,6 +38,16 @@ module org.example.database_btl {
 
     opens database_btl.Manager.model to javafx.fxml;
     exports database_btl.Manager.model;
+    exports database_btl.Backend.model.menuArea.Area.Controller;
+    opens database_btl.Backend.model.menuArea.Area.Controller to javafx.fxml;
+    exports database_btl.Backend.model.menuArea.Menu.Controller;
+    opens database_btl.Backend.model.menuArea.Menu.Controller to javafx.fxml;
+    exports database_btl.Backend.model.Receipt.Controller;
+    opens database_btl.Backend.model.Receipt.Controller to javafx.fxml;
+    exports database_btl.Backend.model.Receipt.Checkout;
+    opens database_btl.Backend.model.Receipt.Checkout to javafx.fxml;
+    exports database_btl.Backend.model.Receipt.Checkout.Controller;
+    opens database_btl.Backend.model.Receipt.Checkout.Controller to javafx.fxml;
 
 
 }

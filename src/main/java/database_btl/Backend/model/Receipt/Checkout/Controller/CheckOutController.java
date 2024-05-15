@@ -1,4 +1,4 @@
-package database_btl.Backend.model.controller;
+package database_btl.Backend.model.Receipt.Checkout.Controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
