@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import org.example.database_btl.Backend.model.Receipt.AllReceipt;
 import org.example.database_btl.Backend.model.controller.ProductController;
 import org.example.database_btl.Exception.*;
+import org.example.database_btl.HelloApplication;
 
 public class Product {
 
@@ -27,10 +28,10 @@ public class Product {
 
     public boolean isInit = false;
 
-    public Product(String name, int price, Image image) {
+    public Product(String name, int price, String imagePath) {
         this.name = name;
         this.price = price;
-        this.image = image;
+        this.image = new Image(HelloApplication.class.getResource(imagePath).toString());
     }
 
     public void initProduct(){

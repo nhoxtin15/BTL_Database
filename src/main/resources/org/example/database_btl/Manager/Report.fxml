@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Manager.controller.ReportController">
+<AnchorPane prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.database_btl.Manager.controller.ReportQuarterController">
    <children>
       <VBox alignment="CENTER" layoutX="50.0" layoutY="38.0" spacing="10.0">
          <children>
@@ -19,7 +18,7 @@
             </Label>
             <ScrollPane fitToWidth="true" prefHeight="445.0" prefWidth="300.0">
                <content>
-                  <TableView prefHeight="444.0" prefWidth="280.0" />
+                  <TableView prefHeight="444.0" prefWidth="280.0" fx:id="tableReport"/>
                </content>
             </ScrollPane>
          </children>

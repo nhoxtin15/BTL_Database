@@ -86,7 +86,7 @@ public class Area {
         synchronized (Sql_connector.lock) {
             try (ResultSet rs = Sql_connector.executeQuery(sqlGetTable);) {
                 while (rs.next()) {
-                    tempTableList.add(new Table(rs.getString("Order_num"), rs.getBoolean("available") ? 1 : -1));
+                    tempTableList.add(new Table(rs.getString("Order_num"), rs.getBoolean("available") ? -1 : 1));
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -110,7 +110,7 @@ public class Area {
         synchronized (Sql_connector.lock){
             try(ResultSet rs = Sql_connector.executeQuery(sqlGetVipRoom)){
                 while (rs.next()){
-                    tempVipRoomList.add(new VipRoom(rs.getString("Room_code"), rs.getBoolean("available")?1:-1));
+                    tempVipRoomList.add(new VipRoom(rs.getString("Room_code"), rs.getBoolean("available")?-1:1));
                 }
             } catch (Exception e) {
                 new PopUpMessage(e);
@@ -175,7 +175,7 @@ public class Area {
             if(t.getStatus() == Table.EnumStatus.SELECTED.getValue()){
                 tableList.add(t.getID());
                 t.setStatus(Table.EnumStatus.OCCUPIED.getValue());
-                String sqlUpdateTable = "UPDATE Table_book SET available = 1 WHERE Order_num = '" + t.getID() + "'" +"and Area_ID = '" + name + "'";
+                String sqlUpdateTable = "UPDATE Table_book SET available = 0 WHERE Order_num = '" + t.getID() + "'" +"and Area_ID = '" + name + "'";
                 synchronized (Sql_connector.lock){
                     Sql_connector.executeUpdate(sqlUpdateTable);
                 }
@@ -185,7 +185,7 @@ public class Area {
             if(v.getStatus() == VipRoom.EnumStatus.SELECTED.getValue()){
                 tableList.add(v.getID());
                 v.setStatus(VipRoom.EnumStatus.OCCUPIED.getValue());
-                String sqlUpdateVipRoom = "UPDATE Vip_room SET available = 1 WHERE Room_code = '" + v.getID();
+                String sqlUpdateVipRoom = "UPDATE Vip_room SET available = 0 WHERE Room_code = '" + v.getID();
                 synchronized (Sql_connector.lock){
                     Sql_connector.executeUpdate(sqlUpdateVipRoom);
                 }

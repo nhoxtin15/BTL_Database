@@ -31,7 +31,7 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" text="Quarterly">
+            <Button mnemonicParsing="false" text="Quarterly" onAction="#getReportQuarter">
                <font>
                   <Font size="16.0" />
                </font>

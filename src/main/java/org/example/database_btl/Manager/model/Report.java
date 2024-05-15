@@ -19,4 +19,19 @@ public class Report {
         this.week = week;
         this.revenue = revenue;
     }
+    public String getYear() {
+        return year;
+    }
+    public String getQuarter() {
+        return quarter;
+    }
+    public String getMonth() {
+        return month;
+    }
+    public String getWeek() {
+        return week;
+    }
+    public String getRevenue() {
+        return revenue;
+    }
 }

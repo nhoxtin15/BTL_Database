@@ -51,11 +51,9 @@ public class Category {
                 String productName = rs.getString("product_name");
 
                 int price = rs.getInt("price");
-                byte[] imageBytes =  rs.getBytes("image");
-                ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);
-                // Read image from ByteArrayInputStream
-                Image image = new Image(bis);
-                tempProductList.add( new Product(productName, price, image));
+                String imagePath = rs.getString("image");
+
+                tempProductList.add( new Product(productName, price, imagePath));
 
             }
         } catch (Exception e){

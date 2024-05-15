@@ -29,5 +29,28 @@ public class Employee {
         this.employeeBirthdate = employeeBirthdate;
     }
 
+    public String getEmployeeSSN() {
+        return employeeSSN;
+    }
+    public String getEmployeeSex() {
+        return employeeSex;
+    }
+    public String getEmployeeWork_start_date() {
+        return employeeWork_start_date;
+    }
+    public String getEmployeeFName() {
+        return employeeFName;
+    }
+    public String getEmployeeLName() {
+        return employeeLName;
+    }
+    public String getEmployeeSalary() {
+        return employeeSalary;
+    }
+    public String getEmployeeBirthdate() {
+        return employeeBirthdate;
+    }
+
+
 
 }
