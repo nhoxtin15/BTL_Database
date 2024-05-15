@@ -4,39 +4,40 @@ module org.example.database_btl {
     requires java.sql;
 
 
-    opens org.example.database_btl to javafx.fxml;
-    exports org.example.database_btl;
+    opens database_btl to javafx.fxml;
+    exports database_btl;
 
-    opens org.example.database_btl.Backend.model to javafx.fxml;
-    exports org.example.database_btl.Backend.model;
+    opens database_btl.Backend.model to javafx.fxml;
+    exports database_btl.Backend.model;
 
-    opens org.example.database_btl.Controller to javafx.fxml;
-    exports org.example.database_btl.Controller;
-
-
-    opens org.example.database_btl.Backend.model.controller to javafx.fxml;
-    exports org.example.database_btl.Backend.model.controller;
+    opens database_btl.Controller to javafx.fxml;
+    exports database_btl.Controller;
 
 
-    opens org.example.database_btl.Backend.model.menuArea to javafx.fxml;
-    exports org.example.database_btl.Backend.model.menuArea;
+    opens database_btl.Backend.model.controller to javafx.fxml;
+    exports database_btl.Backend.model.controller;
 
-    opens org.example.database_btl.Backend.model.menuArea.Area to javafx.fxml;
-    exports org.example.database_btl.Backend.model.menuArea.Area;
 
-    opens org.example.database_btl.Backend.model.menuArea.Menu to javafx.fxml;
-    exports org.example.database_btl.Backend.model.menuArea.Menu;
+    opens database_btl.Backend.model.menuArea to javafx.fxml;
+    exports database_btl.Backend.model.menuArea;
 
-    opens org.example.database_btl.Backend.model.Receipt to javafx.fxml;
-    exports org.example.database_btl.Backend.model.Receipt;
+    opens database_btl.Backend.model.menuArea.Area to javafx.fxml;
+    exports database_btl.Backend.model.menuArea.Area;
 
-    opens org.example.database_btl.Exception.Controller to javafx.fxml;
-    exports org.example.database_btl.Exception.Controller;
+    opens database_btl.Backend.model.menuArea.Menu to javafx.fxml;
+    exports database_btl.Backend.model.menuArea.Menu;
 
-    opens org.example.database_btl.Manager.controller to javafx.fxml;
-    exports org.example.database_btl.Manager.controller;
+    opens database_btl.Backend.model.Receipt to javafx.fxml;
+    exports database_btl.Backend.model.Receipt;
 
-    opens org.example.database_btl.Manager.model to javafx.fxml;
-    exports org.example.database_btl.Manager.model;
+    opens database_btl.Exception.Controller to javafx.fxml;
+    exports database_btl.Exception.Controller;
+
+    opens database_btl.Manager.controller to javafx.fxml;
+    exports database_btl.Manager.controller;
+
+    opens database_btl.Manager.model to javafx.fxml;
+    exports database_btl.Manager.model;
+
 
 }
