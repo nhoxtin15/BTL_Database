@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:id="vBoxmenuAndTable" fx:controller="database_btl.Employee.menuArea.MenuAndTablesController" maxHeight="700">
+    <children>
+        <TabPane fx:id="tabPaneMenuAndAreas" maxHeight="670">
+            <Tab closable="false" text="Areas">
+                <TabPane fx:id="tabPaneAreas">
+
+                </TabPane>
+            </Tab>
+            <Tab text="Menu" closable="false" >
+                <TabPane fx:id="tabPaneMenu">
+
+                </TabPane>
+            </Tab>
+        </TabPane>
+        <Pane prefHeight="30.0" prefWidth="575.0" style="-fx-background-color: #ffffff; -fx-background-radius: 0 0 5 5;">
+            <children>
+                <CheckBox layoutX="33.0" layoutY="6.25" mnemonicParsing="false" text="Open Menu when choose table" fx:id="checkBoxOpenMenu"/>
+                <Button contentDisplay="CENTER" graphicTextGap="0.0" layoutX="462.0" layoutY="2.5" mnemonicParsing="false" pickOnBounds="false" prefHeight="20.0" prefWidth="103.0" text="Create receipt" fx:id="buttonCreateReceipt" />
+            </children>
+        </Pane>
+    </children>
+</VBox>

@@ -12,7 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import database_btl.Backend.Sql_connector;
+import database_btl.Sql_connector;
 import database_btl.Exception.PopUpMessage;
 import database_btl.HelloApplication;
 import database_btl.Manager.model.Employee;

@@ -4,8 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
-import database_btl.Backend.Sql_connector;
-import database_btl.Manager.model.Employee;
+import database_btl.Sql_connector;
 import database_btl.Manager.model.Report;
 
 import java.sql.ResultSet;

@@ -2,7 +2,7 @@ package database_btl.Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.*;
-import database_btl.Backend.model.Restaurant;
+import database_btl.Employee.Restaurant;
 import javafx.scene.layout.VBox;
 public class MainEmployeeController {
 

@@ -3,7 +3,7 @@ package database_btl.Manager.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-import database_btl.Backend.Sql_connector;
+import database_btl.Sql_connector;
 import database_btl.Exception.EmptyInfomation;
 import database_btl.Exception.PopUpMessage;
 
