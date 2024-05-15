@@ -1,4 +1,4 @@
-package database_btl.Employee.Receipt.Checkout.Controller;
+package database_btl.Employee.Receipt.Checkout;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,6 +39,7 @@ public class ChooseCustomerController {
     public void findCustomer(){
         synchronized (Sql_connector.lock){
             String sql = "SELECT * FROM CUSTOMER c, Customer_Phone_number cpn WHERE  c.Cus_ID = cpn.Cus_ID and (SSN = '"+SSNToFind.getText()+"' OR Phone_number = '"+PhoneToFind.getText()+"')";
+
             try(ResultSet rs = Sql_connector.executeQuery(sql)) {
                 if (rs.next()) {
                     customerID = rs.getString("Cus_ID");
@@ -71,17 +72,22 @@ public class ChooseCustomerController {
 
     public void register(ActionEvent event){
         //open the register customer tab
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/CustomerRegisteration.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerRegisteration.fxml"));
         try{
             Parent root = loader.load();
             CustomerRegisterController controller = loader.getController();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
-            Stage currentstage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            currentstage.hide();
+
+
+
             stage.showAndWait();
 
-            currentstage.show();
+            this.customerName = controller.customerLName.getText() + " " + controller.customerFName.getText();
+            this.customerPoint = 0 + "";
+
+            this.CustomerFound.setText(customerName);
+            this.PointFound.setText(customerPoint);
 
 
 

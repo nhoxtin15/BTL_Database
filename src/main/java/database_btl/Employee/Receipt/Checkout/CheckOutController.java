@@ -1,4 +1,4 @@
-package database_btl.Employee.Receipt.Checkout.Controller;
+package database_btl.Employee.Receipt.Checkout;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,7 +37,7 @@ public class CheckOutController {
 
 
     public void addProduct(ProductReceipt productReceipt){
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/CheckOutProduct.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CheckOutProduct.fxml"));
         try{
             Pane product = loader.load();
             CheckOutProductController controller = loader.getController();
@@ -54,14 +54,16 @@ public class CheckOutController {
     }
 
     public void chooseCustomer(){
-        FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("Backend/model/Receipt/CustomerChooser.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerChooser.fxml"));
         try{
             Parent product = loader.load();
             ChooseCustomerController controller = loader.getController();
             Scene scene = new Scene(product);
             Stage stage = new Stage();
             stage.setScene(scene);
+
             stage.showAndWait();
+
             customer.setText(controller.customerName);
             customerPoint.setText(controller.customerPoint);
 

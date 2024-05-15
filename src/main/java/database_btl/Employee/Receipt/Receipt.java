@@ -4,7 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Tab;
 import javafx.stage.Stage;
-import database_btl.Employee.Receipt.Checkout.Controller.CheckOutController;
+import database_btl.Employee.Receipt.Checkout.CheckOutController;
 import database_btl.Employee.Receipt.Controller.ReceiptController;
 
 import java.util.ArrayList;
@@ -125,7 +125,7 @@ public class Receipt {
 
 
     public void checkout(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout/Checkout.fxml"));
         try{
             Parent checkout = loader.load();
             CheckOutController checkOutController = loader.getController();

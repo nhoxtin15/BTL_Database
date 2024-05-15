@@ -33,8 +33,10 @@ public class LoginController{
     @FXML
     protected void onLoginButtonClick(ActionEvent event) throws Exception {
         if (username.getText().isEmpty() || password.getText().isEmpty()){
-            new PopUpMessage(new Exception("Please fill in all the information"));
-            return;
+//            new PopUpMessage(new Exception("Please fill in all the information"));
+//            return;
+            username.setText("root");
+            password.setText("nhoxtin1");
         }
 
         try {

@@ -1,4 +1,4 @@
-module org.example.database_btl {
+module database_btl {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
@@ -51,8 +51,7 @@ module org.example.database_btl {
     opens database_btl.Employee.Receipt.Checkout to javafx.fxml;
     exports database_btl.Employee.Receipt.Checkout;
 
-    opens database_btl.Employee.Receipt.Checkout.Controller to javafx.fxml;
-    exports database_btl.Employee.Receipt.Checkout.Controller;
+
 
 
 

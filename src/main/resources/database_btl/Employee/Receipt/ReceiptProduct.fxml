@@ -22,7 +22,7 @@
             </Label>
             <ImageView fx:id="removeButton" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Image/close.png" />
+                  <Image url="@../../Image/close.png" />
                </image>
             </ImageView>
             <Label fx:id="nameProduct" prefHeight="30.0" prefWidth="149.0" text="HCMUT Flavour beef">
@@ -37,7 +37,7 @@
                      <graphic>
                         <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../Image/plus.png" />
+                              <Image url="@../../Image/plus.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -47,7 +47,7 @@
                      <graphic>
                         <ImageView fitHeight="16.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../Image/minus.png" />
+                              <Image url="@../../Image/minus.png" />
                            </image>
                         </ImageView>
                      </graphic>

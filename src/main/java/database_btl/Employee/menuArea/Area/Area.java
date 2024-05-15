@@ -185,7 +185,7 @@ public class Area {
             if(v.getStatus() == VipRoom.EnumStatus.SELECTED.getValue()){
                 tableList.add(v.getID());
                 v.setStatus(VipRoom.EnumStatus.OCCUPIED.getValue());
-                String sqlUpdateVipRoom = "UPDATE Vip_room SET available = 0 WHERE Room_code = '" + v.getID();
+                String sqlUpdateVipRoom = "UPDATE Vip_room SET available = 0 WHERE Room_code = '" + v.getID()+"'";
                 synchronized (Sql_connector.lock){
                     Sql_connector.executeUpdate(sqlUpdateVipRoom);
                 }

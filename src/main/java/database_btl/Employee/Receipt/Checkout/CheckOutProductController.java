@@ -1,4 +1,4 @@
-package database_btl.Employee.Receipt.Checkout.Controller;
+package database_btl.Employee.Receipt.Checkout;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
