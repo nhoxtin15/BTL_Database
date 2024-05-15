@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Employee.model.Receipt.Checkout.Controller.CustomerRegisterController">
+<AnchorPane prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Employee.Receipt.Checkout.Controller.CustomerRegisterController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="550.0" prefWidth="400.0" spacing="10.0">
          <children>

@@ -138,7 +138,9 @@ public class Receipt {
             checkOutController.finalPrice.setText(String.valueOf(totalPrice));
             Stage stage = new Stage();
             stage.setScene(new javafx.scene.Scene(checkout));
-            stage.show();
+
+            //show and wait
+            stage.showAndWait();
 
         }
         catch (Exception e){
