@@ -15,6 +15,12 @@ This app is building mainly by Java.
 - IntelliJ IDEA: for the IDE
 - Scene Builder: for the UI design
 - MySQL Workbench: for the database design
+### 1.3 Database
+The design and Sql statment is the work of all group not just my self. You can view the design here:
+[ERD](https://drive.google.com/file/d/1xurWWLluZg9V0g4hCCQwojOTJ1R5oEPw/view?usp=share_link)
+
+[Mapping](https://drive.google.com/file/d/1EUMETgpXjrrok_FOAyzvOBZnkNW9Df9J/view?usp=share_link)
+
 ## 2. Features
 ### 2.1. Implemented
 - [x] Login
