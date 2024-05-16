@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -37,7 +38,8 @@ public class CheckOutController {
     @FXML
     public TextField customerPoint;
 
-
+    @FXML
+    public Button buttonCheckOut;
 
     public void addProduct(CheckOutProduct checkOutProduct){
         productContainer.getChildren().add(checkOutProduct.checkOutProductContainer);
@@ -85,12 +87,5 @@ public class CheckOutController {
 
     }
 
-    public void checkOut(ActionEvent event){
-        //check out update
 
-
-        //close the tab
-
-
-    }
 }

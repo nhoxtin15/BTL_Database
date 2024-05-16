@@ -546,7 +546,7 @@ VALUES ('999999991', 'M', 'Hung', 'Huynh Gia', '1994-07-30');
 INSERT INTO  Customer(ssn, sex, FName, Lname, dob) 
 VALUES ('000000002', 'M', 'Gordon', 'Ramsay', '1987-04-12');
 
-select * from customer;
+
 
 
 INSERT INTO  Customer_Phone_number (Cus_ID, Phone_number)
@@ -567,7 +567,7 @@ VALUES
     ('C00000014', '6543210987'),
     ('C00000015', '5432109876'),
     ('C00000016', '4321098765'),
-    ('C000000017', '3210987654'),
+    ('C00000017', '3210987654'),
     ('C00000018', '2109876543'),
     ('C00000019', '1098765432'),
     ('C00000020', '0987654321'),

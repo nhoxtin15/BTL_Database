@@ -3,6 +3,7 @@ package database_btl.Employee.Receipt.Checkout;
 import database_btl.Employee.Receipt.Checkout.Controller.CheckOutController;
 import database_btl.Employee.Receipt.ProductReceipt;
 import database_btl.Employee.menuArea.Menu.Product;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -73,10 +74,16 @@ public class Checkout {
             for (CheckOutProduct product : products){
                 checkOutController.addProduct(product);
             }
-
+            checkOutController.buttonCheckOut.setOnAction(this::checkOut);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void checkOut(ActionEvent event){
+
+
+
     }
 
 
