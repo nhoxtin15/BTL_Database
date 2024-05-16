@@ -56,4 +56,14 @@ This app is building mainly by Java.
 ## 4. Screenshots
 ### 4.1. Login
 ![Login](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/Login.png)
+### 4.2 Main page
+![MainPage](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/MainPage.png)
+![Menu](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/Menu.png)
+![Receipt](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/Receipt.png)
+### 4.3 Check out
+![CheckOut](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/CheckOut.png)
+![CustomerChooser](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/CustomerChooser.png)
+![CustomerRegisteration](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/CustomerRegisteration.png)
+### 4.4 Manager site
+![ManagerSite](https://github.com/nhoxtin15/BTL_Database/blob/main/Screenshot/ManagerSite.png)
 
