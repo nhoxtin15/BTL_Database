@@ -1,4 +1,4 @@
-package database_btl.Employee.Receipt.Checkout;
+package database_btl.Employee.Receipt.Checkout.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

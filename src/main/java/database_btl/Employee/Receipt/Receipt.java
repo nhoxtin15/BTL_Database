@@ -1,10 +1,13 @@
 package database_btl.Employee.Receipt;
 
+import database_btl.Employee.Receipt.Checkout.Checkout;
+import database_btl.Employee.Restaurant;
+import database_btl.Exception.NoTableSelected;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Tab;
 import javafx.stage.Stage;
-import database_btl.Employee.Receipt.Checkout.CheckOutController;
+import database_btl.Employee.Receipt.Checkout.Controller.CheckOutController;
 import database_btl.Employee.Receipt.Controller.ReceiptController;
 
 import java.util.ArrayList;
@@ -49,8 +52,6 @@ public class Receipt {
             receiptContainer.setText(name);
 
 
-
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -59,19 +60,16 @@ public class Receipt {
     public void addProduct(String name, int price,int quantity){
         for (ProductReceipt productReceipt : productReceipts){
             if(productReceipt.name.equals(name)){
-                System.out.println("Increase quantity");
                 productReceipt.increaseQuantity(quantity);
                 return;
             }
         }
 
-        ProductReceipt productReceipt = new ProductReceipt(this.productReceipts.size()+1,name, price);
+        ProductReceipt productReceipt = new ProductReceipt(this.productReceipts.size()+1,name, price,tables);
         productReceipt.productReceiptController.removeButton.setOnMouseClicked(event -> {
             removeProduct(name,price);
         });
-        for (String i : this.tables){
-            productReceipt.productReceiptController.tables.getItems().add(i);
-        }
+
 
         productReceipts.add(productReceipt);
         productReceipt.productReceiptController.totalPriceProduct.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -124,28 +122,21 @@ public class Receipt {
     }
 
 
-    public void checkout(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Checkout/Checkout.fxml"));
-        try{
-            Parent checkout = loader.load();
-            CheckOutController checkOutController = loader.getController();
-            long totalPrice = 0;
-            for (ProductReceipt productReceipt : productReceipts){
-                checkOutController.addProduct(productReceipt);
-                totalPrice += (long) productReceipt.price * productReceipt.quantity;
+    public void checkout() throws  Exception {
+        //get all the product
+
+        for (ProductReceipt productReceipt : productReceipts) {
+            if(productReceipt.quantity == 0){
+                continue; //skip the product with quantity = 0
             }
-            checkOutController.totalPrice.setText(String.valueOf(totalPrice));
-            checkOutController.finalPrice.setText(String.valueOf(totalPrice));
-            Stage stage = new Stage();
-            stage.setScene(new javafx.scene.Scene(checkout));
-
-            //show and wait
-            stage.showAndWait();
-
+            if (productReceipt.tableName == null) {
+                throw new NoTableSelected(productReceipt.name);
+            }
         }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+        Restaurant.getInstance().checkout = new Checkout(this.productReceipts);
+
+        Restaurant.getInstance().checkout.show();
+
     }
 
 }

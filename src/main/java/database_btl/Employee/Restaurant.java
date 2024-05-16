@@ -1,13 +1,13 @@
 package database_btl.Employee;
 
 
+import database_btl.Employee.Receipt.Checkout.Checkout;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
 
 import database_btl.Employee.Receipt.AllReceipt;
 import database_btl.Employee.controller.RestaurantController;
 import database_btl.Employee.menuArea.MenuAndTables;
-import database_btl.Employee.Receipt.Receipt;
 
 public class Restaurant {
 
@@ -22,7 +22,8 @@ public class Restaurant {
     ///////////////////////////////////////////
 
         public MenuAndTables menuAndTables;
-        public Receipt receipt;
+        public AllReceipt receipt;
+        public Checkout checkout = null;
 
     ////////////////////////////////
     //                            //

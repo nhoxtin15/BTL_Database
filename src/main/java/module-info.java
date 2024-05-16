@@ -50,9 +50,8 @@ module database_btl {
 
     opens database_btl.Employee.Receipt.Checkout to javafx.fxml;
     exports database_btl.Employee.Receipt.Checkout;
-
-
-
+    exports database_btl.Employee.Receipt.Checkout.Controller;
+    opens database_btl.Employee.Receipt.Checkout.Controller to javafx.fxml;
 
 
 }

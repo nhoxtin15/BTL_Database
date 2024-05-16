@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Employee.Receipt.Checkout.CheckOutController">
+<AnchorPane prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Employee.Receipt.Checkout.Controller.CheckOutController">
    <children>
       <ImageView fitHeight="300.0" fitWidth="300.0" layoutX="12.5" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -87,7 +87,7 @@
                         <Font size="16.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="Check out">
+                  <Button mnemonicParsing="false" text="Check out" onAction="#checkOut">
                      <font>
                         <Font size="16.0" />
                      </font></Button>

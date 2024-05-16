@@ -1,5 +1,8 @@
-package database_btl.Employee.Receipt.Checkout;
+package database_btl.Employee.Receipt.Checkout.Controller;
 
+import database_btl.Employee.Receipt.Checkout.CheckOutProduct;
+import database_btl.Employee.Receipt.Checkout.Checkout;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,7 +12,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import database_btl.Employee.Receipt.ProductReceipt;
-import database_btl.HelloApplication;
 
 /**
  * Description:
@@ -36,25 +38,13 @@ public class CheckOutController {
     public TextField customerPoint;
 
 
-    public void addProduct(ProductReceipt productReceipt){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CheckOutProduct.fxml"));
-        try{
-            Pane product = loader.load();
-            CheckOutProductController controller = loader.getController();
-            controller.ID.setText(String.valueOf(productReceipt.ID));
-            controller.Name.setText(productReceipt.name);
-            controller.Quantity.setText(String.valueOf(productReceipt.quantity));
-            controller.Price.setText(String.valueOf(productReceipt.quantity));
-            controller.totalPrice.setText(String.valueOf(productReceipt.quantity * productReceipt.price));
 
-            productContainer.getChildren().add(product);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+    public void addProduct(CheckOutProduct checkOutProduct){
+        productContainer.getChildren().add(checkOutProduct.checkOutProductContainer);
     }
 
     public void chooseCustomer(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerChooser.fxml"));
+        FXMLLoader loader = new FXMLLoader(Checkout.class.getResource("CustomerChooser.fxml"));
         try{
             Parent product = loader.load();
             ChooseCustomerController controller = loader.getController();
@@ -88,8 +78,19 @@ public class CheckOutController {
                 point.setText(oldValue);
                 return;
             }
+            int finalPrice = Integer.parseInt(totalPrice.getText()) - pointUsed;
+            this.finalPrice.setText(String.valueOf(finalPrice));
 
         });
+
+    }
+
+    public void checkOut(ActionEvent event){
+        //check out update
+
+
+        //close the tab
+
 
     }
 }

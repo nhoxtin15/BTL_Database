@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<Pane prefHeight="50.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Employee.Receipt.Checkout.CheckOutProductController">
+<Pane prefHeight="50.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="database_btl.Employee.Receipt.Checkout.Controller.CheckOutProductController">
    <children>
       <HBox alignment="CENTER_LEFT" layoutX="1.0" layoutY="-2.0" prefHeight="50.0" prefWidth="430.0" spacing="10.0">
          <children>

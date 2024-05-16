@@ -1,6 +1,7 @@
 package database_btl.Employee.Receipt;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.VBox;
 import database_btl.Employee.Restaurant;
 import database_btl.Employee.Receipt.Controller.AllReceiptController;
@@ -57,7 +58,12 @@ public class AllReceipt {
     }
 
     public static void addProduct(String name, int price) throws Exception{
-        String currentName = Restaurant.getInstance().allReceipt.allReceiptController.receipts.getSelectionModel().getSelectedItem().getText();
+        Tab CurrentReceipt = Restaurant.getInstance().allReceipt.allReceiptController.receipts.getSelectionModel().getSelectedItem();
+        if (CurrentReceipt == null){
+            throw new NoReceipt();
+        }
+        String currentName = CurrentReceipt.getText();
+
         for(Receipt receipt : Restaurant.getInstance().allReceipt.allReceipts){
             if(receipt.name.equals(currentName)){
                 receipt.addProduct(name,price,1);
@@ -92,7 +98,13 @@ public class AllReceipt {
         String currentName = Restaurant.getInstance().allReceipt.allReceiptController.receipts.getSelectionModel().getSelectedItem().getText();
         for(Receipt receipt : Restaurant.getInstance().allReceipt.allReceipts){
             if(receipt.name.equals(currentName)){
-                receipt.checkout();
+                try{
+                    receipt.checkout();
+                }
+                catch (Exception e){
+                    new PopUpMessage(e);
+                }
+
             }
         }
     }

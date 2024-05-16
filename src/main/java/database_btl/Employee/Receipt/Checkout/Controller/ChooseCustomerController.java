@@ -1,5 +1,6 @@
-package database_btl.Employee.Receipt.Checkout;
+package database_btl.Employee.Receipt.Checkout.Controller;
 
+import database_btl.Employee.Receipt.Checkout.Checkout;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import database_btl.Sql_connector;
 import database_btl.Exception.PopUpMessage;
-import database_btl.HelloApplication;
 
 import java.sql.ResultSet;
 
@@ -72,7 +72,7 @@ public class ChooseCustomerController {
 
     public void register(ActionEvent event){
         //open the register customer tab
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerRegisteration.fxml"));
+        FXMLLoader loader = new FXMLLoader(Checkout.class.getResource("CustomerRegisteration.fxml"));
         try{
             Parent root = loader.load();
             CustomerRegisterController controller = loader.getController();

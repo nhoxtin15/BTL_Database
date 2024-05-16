@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import database_btl.Employee.Receipt.Controller.ReceiptProductController;
 
+import java.util.ArrayList;
+
 /**
  * Description: Store the product in the receipt$
  * Author: nhoxtin15$
@@ -16,16 +18,27 @@ public class ProductReceipt {
     public String name;
     public int price;
 
+    public String tableName;
+
     public AnchorPane productReceiptContainer;
     public ReceiptProductController productReceiptController;
 
 
-    public ProductReceipt(int ID, String name, int price){
+    public ProductReceipt(int ID, String name, int price, ArrayList<String> tables){
         this.ID = ID;
         this.name = name;
         this.price = price;
         quantity = 1;
         initReceiptProduct();
+
+        productReceiptController.tables.getItems().addAll(tables);
+
+
+
+        //listener
+        productReceiptController.tables.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            tableName = newValue;
+        });
     }
 
 
@@ -56,7 +69,6 @@ public class ProductReceipt {
         this.quantity = quantity;
         productReceiptController.quantity.setText(String.valueOf(this.quantity));
     }
-
     public void setID(int ID){
         this.ID = ID;
         this.productReceiptController.iD.setText(String.valueOf(ID));

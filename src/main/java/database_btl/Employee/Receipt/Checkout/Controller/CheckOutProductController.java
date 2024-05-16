@@ -1,4 +1,4 @@
-package database_btl.Employee.Receipt.Checkout;
+package database_btl.Employee.Receipt.Checkout.Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -20,4 +20,7 @@ public class CheckOutProductController {
     public Label Price;
     @FXML
     public Label totalPrice;
+
+
+
 }
